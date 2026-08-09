@@ -30,7 +30,7 @@ export default function About() {
 
         <Reveal delay={1} className="about-card">
           <p>
-            <strong>Rankions</strong> is a digital agency built for businesses that need more than one specialist. We
+            <strong>Techlifai</strong> is a digital agency built for businesses that need more than one specialist. We
             cover custom web development, WordPress, Webflow, Shopify, app development, SEO and AI automation — all
             under one team that already knows how to talk to each other.
           </p>

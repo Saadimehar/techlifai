@@ -7,7 +7,7 @@ export default function Team() {
       <div className="wrap">
         <Reveal className="section-head">
           <div className="eyebrow">OUR TEAM</div>
-          <h2 className="h2">The people behind Rankions.</h2>
+          <h2 className="h2">The people behind Techlifai.</h2>
           <p className="sub">A small core team backed by specialists in every service we offer.</p>
         </Reveal>
 

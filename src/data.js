@@ -48,7 +48,7 @@ export const TEAM = [
 export const ROLE_CHIPS = ['Shopify Developers', 'WordPress Engineers', 'SEO Strategists', 'Mobile Developers', 'UI/UX Designers', 'QA Engineers', 'Project Managers', 'Content Writers'];
 
 export const TESTIMONIALS = [
-  { quote: 'Rankions rebuilt our storefront and our conversion rate jumped within the first month. Communication was clear the entire way through.', name: 'Alina Cortez', role: 'Founder, Marrow Coffee', grad: 'linear-gradient(135deg,#00e6a8,#00b386)' },
+  { quote: 'Techlifai rebuilt our storefront and our conversion rate jumped within the first month. Communication was clear the entire way through.', name: 'Alina Cortez', role: 'Founder, Marrow Coffee', grad: 'linear-gradient(135deg,#00e6a8,#00b386)' },
   { quote: 'The AI support bot they built now handles most of our repetitive tickets. Our team finally has room to focus on real problems.', name: 'Devon Marsh', role: 'Ops Lead, Kestrel', grad: 'linear-gradient(135deg,#7c6bf0,#5644c9)' },
   { quote: 'Our organic traffic grew tenfold after their SEO work. They explained every decision instead of just handing us a report.', name: 'Priya Nathan', role: 'CEO, Bramwell Home Goods', grad: 'linear-gradient(135deg,#ffb020,#e08c00)' },
 ];

@@ -1,4 +1,4 @@
-# Rankions — Digital Growth Studio
+# Techlifai — Digital Growth Studio
 
 A one-page, animated agency website built with React + Vite.
 
@@ -38,7 +38,7 @@ npm run preview
 ## Project structure
 
 ```
-rankions/
+techlifai/
 ├─ index.html            # HTML entry point (loads fonts + src/main.jsx)
 ├─ package.json
 ├─ vite.config.js

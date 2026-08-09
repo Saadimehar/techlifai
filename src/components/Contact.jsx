@@ -24,7 +24,7 @@ export default function Contact() {
       `Name: ${form.name}\nEmail: ${form.email}\nService: ${form.service}\n\nMessage:\n${form.message}`
     );
     window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-    setStatus('Opening your email app to send this to Rankions — hit send there to finish.');
+    setStatus('Opening your email app to send this to Techlifai — hit send there to finish.');
   };
 
   return (

@@ -15,11 +15,14 @@ export default function Footer() {
             <div className="brand" style={{ fontSize: 19 }}>
               <span className="brand-mark">
                 <svg viewBox="0 0 32 32" fill="none">
-                  <polygon points="16,2 29,9 29,23 16,30 3,23 3,9" stroke="#00e6a8" strokeWidth="1.6" />
-                  <path d="M11 22V10h5.5a3.5 3.5 0 0 1 0 7H13l6 5" stroke="#eaeff5" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                  <rect x="3.5" y="3.5" width="25" height="25" rx="8" stroke="#00e6a8" strokeWidth="1.6" />
+                  <path d="M10 10.5h12" stroke="#eaeff5" strokeWidth="1.6" strokeLinecap="round" />
+                  <path d="M14 10.5v11" stroke="#eaeff5" strokeWidth="1.6" strokeLinecap="round" />
+                  <path d="M18 10.5v11" stroke="#eaeff5" strokeWidth="1.6" strokeLinecap="round" />
+                  <circle cx="22.5" cy="11" r="2.2" fill="#00e6a8" />
                 </svg>
               </span>
-              <span>Rankions</span>
+              <span>Techlifai</span>
             </div>
             <p>A full-stack digital agency for web, commerce, apps and AI — built to help your business rank.</p>
             <div className="social-row">
@@ -60,8 +63,8 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} Rankions. All rights reserved.</span>
-          <span>Designed &amp; built by the Rankions team.</span>
+          <span>© {new Date().getFullYear()} Techlifai. All rights reserved.</span>
+          <span>Designed &amp; built by the Techlifai team.</span>
         </div>
       </div>
     </footer>

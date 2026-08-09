@@ -20,14 +20,14 @@ export default function Hero() {
     <section id="home" className="hero">
       <div className="wrap hero-grid">
         <div>
-          <Reveal className="eyebrow">RANKIONS — DIGITAL GROWTH STUDIO</Reveal>
+          <Reveal className="eyebrow">TECHLIFAI — DIGITAL GROWTH STUDIO</Reveal>
           <Reveal as="h1" delay={1}>
             We build what makes
             <br />
             businesses <span className="accent">rank.</span>
           </Reveal>
           <Reveal delay={2} as="p" className="lead">
-            Code, commerce and AI under one roof. Rankions designs, builds and automates the web, app and marketing
+            Code, commerce and AI under one roof. Techlifai designs, builds and automates the web, app and marketing
             systems your business runs on.
           </Reveal>
           <Reveal delay={3} className="hero-ctas">
@@ -50,7 +50,7 @@ export default function Hero() {
           <div className="orbit-ring r1"></div>
           <div className="orbit-ring r2"></div>
           <div className="orbit-ring r3"></div>
-          <div className="orbit-core"><span>RNK</span></div>
+          <div className="orbit-core"><span>TL</span></div>
           {NODES.map((n, i) => {
             const angle = (360 / NODES.length) * i;
             const radius = i % 2 === 0 ? 115 : 170;
