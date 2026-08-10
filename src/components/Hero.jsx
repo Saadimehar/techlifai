@@ -1,11 +1,13 @@
 import Reveal from '../Reveal.jsx';
-import { IconArrow, IconCode, IconWP, IconWebflow, IconShop, IconApp, IconAI } from '../icons.jsx';
+import { IconArrow, IconCode, IconWP, IconWebflow, IconShop, IconMarketing, IconVideo, IconApp, IconAI } from '../icons.jsx';
 
 const NODES = [
   { icon: IconCode, dur: '20s' },
   { icon: IconWP, dur: '26s' },
   { icon: IconWebflow, dur: '20s' },
   { icon: IconShop, dur: '26s' },
+  { icon: IconMarketing, dur: '20s' },
+  { icon: IconVideo, dur: '26s' },
   { icon: IconApp, dur: '20s' },
   { icon: IconAI, dur: '26s' },
 ];
@@ -27,8 +29,8 @@ export default function Hero() {
             businesses <span className="accent">rank.</span>
           </Reveal>
           <Reveal delay={2} as="p" className="lead">
-            Code, commerce and AI under one roof. Techlifai designs, builds and automates the web, app and marketing
-            systems your business runs on.
+            Code, commerce, marketing and AI under one roof. Techlifai designs, builds and automates the web, app,
+            brand and growth systems your business runs on.
           </Reveal>
           <Reveal delay={3} className="hero-ctas">
             <a href="#contact" className="btn btn-primary" onClick={scrollTo('contact')}>
@@ -40,7 +42,7 @@ export default function Hero() {
           </Reveal>
           <Reveal delay={4} className="hero-stats">
             <div className="stat"><b>40+</b><span>PROJECTS SHIPPED</span></div>
-            <div className="stat"><b>7</b><span>SERVICE LINES</span></div>
+            <div className="stat"><b>9</b><span>SERVICE LINES</span></div>
             <div className="stat"><b>15+</b><span>SPECIALISTS</span></div>
             <div className="stat"><b>98%</b><span>CLIENT RETENTION</span></div>
           </Reveal>

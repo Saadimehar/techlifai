@@ -11,6 +11,8 @@ export const IconShop = (p) => <Icon {...p}><path d="M3 9l1.5-5h15L21 9" /><path
 export const IconApp = (p) => <Icon {...p}><rect x="6" y="2" width="12" height="20" rx="2" /><line x1="11" y1="18" x2="13" y2="18" /></Icon>;
 export const IconSEO = (p) => <Icon {...p}><circle cx="11" cy="11" r="7" /><line x1="21" y1="21" x2="16.5" y2="16.5" /><path d="M8 11l2 2 4-4" /></Icon>;
 export const IconAI = (p) => <Icon {...p}><rect x="5" y="5" width="14" height="14" rx="3" /><circle cx="9" cy="10" r="1" /><circle cx="15" cy="10" r="1" /><path d="M9 15c1 1 5 1 6 0" /><path d="M12 2v3M12 19v3M2 12h3M19 12h3" /></Icon>;
+export const IconMarketing = (p) => <Icon {...p}><path d="M4 16l6-3 4 2 6-8" /><path d="M18 7h2v2" /><path d="M6 19h12" /><path d="M5 7h4" /><path d="M5 11h2" /></Icon>;
+export const IconVideo = (p) => <Icon {...p}><rect x="3" y="6" width="14" height="12" rx="2" /><polygon points="10 10 14 12 10 14" /><path d="M17 10l4-2v8l-4-2" /></Icon>;
 export const IconArrow = (p) => <Icon {...p}><line x1="7" y1="17" x2="17" y2="7" /><polyline points="7 7 17 7 17 17" /></Icon>;
 export const IconMail = (p) => <Icon {...p}><rect x="3" y="5" width="18" height="14" rx="2" /><polyline points="3 7 12 13 21 7" /></Icon>;
 export const IconPhone = (p) => <Icon {...p}><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .3 2 .7 3a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.2-1.3a2 2 0 0 1 2.1-.5c1 .4 2 .6 3 .7a2 2 0 0 1 1.7 2.1z" /></Icon>;

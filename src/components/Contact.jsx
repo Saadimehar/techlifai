@@ -74,6 +74,8 @@ export default function Contact() {
                 <option>WordPress</option>
                 <option>Webflow Development</option>
                 <option>Shopify Development</option>
+                <option>Digital Marketing</option>
+                <option>Video Editing</option>
                 <option>App Development</option>
                 <option>SEO</option>
                 <option>AI Automation</option>

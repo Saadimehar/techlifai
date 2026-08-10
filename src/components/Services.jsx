@@ -8,7 +8,7 @@ export default function Services() {
         <Reveal className="section-head">
           <div className="eyebrow">SERVICES</div>
           <h2 className="h2">Everything your business needs online.</h2>
-          <p className="sub">Seven service lines, one team — pick one or combine them into a single roadmap.</p>
+          <p className="sub">Nine service lines, one team — pick one or combine them into a single roadmap.</p>
         </Reveal>
 
         <Reveal delay={1} className="services-grid">

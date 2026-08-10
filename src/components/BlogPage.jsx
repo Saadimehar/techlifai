@@ -3,7 +3,14 @@ import { BLOG_POSTS } from '../data.js';
 import { IconArrow } from '../icons.jsx';
 
 export default function BlogPage({ onBack }) {
-  const [activeSlug, setActiveSlug] = useState(() => window.location.hash.replace('#', '') || '');
+  const getSlugFromHash = () => {
+    const hash = window.location.hash.replace('#', '');
+    if (!hash) return '';
+    if (hash.startsWith('/blog/')) return hash.replace('/blog/', '');
+    return hash.replace('/blog#', '').replace('/blog', '');
+  };
+
+  const [activeSlug, setActiveSlug] = useState(() => getSlugFromHash());
 
   useEffect(() => {
     document.title = 'Techlifai Blog | Web Development, SEO and AI Automation Insights';
@@ -16,7 +23,7 @@ export default function BlogPage({ onBack }) {
   const selectedPost = useMemo(() => BLOG_POSTS.find((post) => post.slug === activeSlug) || null, [activeSlug]);
 
   useEffect(() => {
-    const slugFromHash = window.location.hash.replace('#', '');
+    const slugFromHash = getSlugFromHash();
     if (slugFromHash) {
       setActiveSlug(slugFromHash);
     }
@@ -24,12 +31,12 @@ export default function BlogPage({ onBack }) {
 
   const openPost = (slug) => {
     setActiveSlug(slug);
-    window.history.replaceState({}, '', `#/blog/${slug}`);
+    window.history.replaceState({}, '', `#${slug}`);
   };
 
   const closePost = () => {
     setActiveSlug('');
-    window.history.replaceState({}, '', '#');
+    window.history.replaceState({}, '', '/blog');
   };
 
   return (

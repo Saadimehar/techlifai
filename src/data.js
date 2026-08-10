@@ -1,4 +1,4 @@
-import { IconCode, IconWP, IconWebflow, IconShop, IconApp, IconSEO, IconAI } from './icons.jsx';
+import { IconCode, IconWP, IconWebflow, IconShop, IconApp, IconSEO, IconAI, IconMarketing, IconVideo } from './icons.jsx';
 
 export const CONTACT_EMAIL = 'techlifai@gmail.com';
 
@@ -17,18 +17,22 @@ export const SERVICES = [
   { icon: IconWP, title: 'WordPress', tag: 'CMS builds', desc: 'Custom themes, plugins and full site builds on WordPress that stay easy for your team to manage.' },
   { icon: IconWebflow, title: 'Webflow Development', tag: 'Visual + code', desc: 'Pixel-accurate Webflow builds with clean CMS structures, animations and fast load times.' },
   { icon: IconShop, title: 'Shopify Development', tag: 'E-commerce', desc: 'Custom Shopify themes, app integrations and checkout optimization built to convert.' },
+  { icon: IconMarketing, title: 'Digital Marketing', tag: 'SEO + ads', desc: 'Paid media, content strategy, email funnels and conversion tracking designed to turn traffic into revenue.' },
+  { icon: IconVideo, title: 'Video Editing', tag: 'Motion content', desc: 'Short-form and long-form video editing for ads, social campaigns, reels and brand storytelling.' },
   { icon: IconApp, title: 'App Development', tag: 'iOS · Android', desc: 'Native and cross-platform mobile apps, from first wireframe to App Store launch.' },
   { icon: IconSEO, title: 'SEO', tag: 'Growth', desc: 'Technical SEO, content strategy and link building that moves you up the results page and stays there.' },
   { icon: IconAI, title: 'AI Automation', tag: 'Chatbots · Workflows', desc: 'AI chatbots, agents and workflow automation that cut manual work out of your business.' },
 ];
 
-export const PROJECT_CATS = ['All', 'Web Dev', 'WordPress', 'Webflow', 'Shopify', 'App Dev', 'SEO', 'AI'];
+export const PROJECT_CATS = ['All', 'Web Dev', 'WordPress', 'Webflow', 'Shopify', 'Digital Marketing', 'Video Editing', 'App Dev', 'SEO', 'AI'];
 
 export const PROJECTS = [
   { cat: 'Web Dev', tag: 'Web Development', title: 'Northline Logistics Platform', desc: 'A React + Node dashboard for real-time fleet tracking across 300+ vehicles.' },
   { cat: 'WordPress', tag: 'WordPress', title: 'Alder & Co. Law Firm Site', desc: 'Custom WordPress theme with case-study CMS and a 40% faster load time.' },
   { cat: 'Webflow', tag: 'Webflow', title: 'Solace Wellness Studio', desc: 'Animated Webflow marketing site with CMS-driven class schedules.' },
   { cat: 'Shopify', tag: 'Shopify', title: 'Marrow Coffee Roasters', desc: 'Shopify storefront rebuild that lifted conversion rate by 28%.' },
+  { cat: 'Digital Marketing', tag: 'Digital Marketing', title: 'Northshore Growth Campaign', desc: 'Multi-channel digital marketing campaign with paid search, landing pages and email automation.' },
+  { cat: 'Video Editing', tag: 'Video Editing', title: 'Pulse Media Content Engine', desc: 'Fast-paced short-form video editing system for social ads, YouTube shorts and product promos.' },
   { cat: 'App Dev', tag: 'App Development', title: 'Fettle Fitness Tracker', desc: 'Cross-platform iOS/Android app with habit tracking and social streaks.' },
   { cat: 'SEO', tag: 'SEO', title: 'Bramwell Home Goods', desc: 'Technical SEO overhaul that took organic traffic from 4K to 41K monthly.' },
   { cat: 'AI', tag: 'AI Automation', title: 'Kestrel Support Bot', desc: 'AI chatbot + workflow automation that resolved 62% of tickets with zero agent time.' },
@@ -45,7 +49,7 @@ export const TEAM = [
   { name: 'Athar Ali', role: 'COO', desc: 'Manages the day-to-day operations and ensures the company is running efficiently.', skills: ['SEO', 'Python', 'Workflow Automation'], grad: 'linear-gradient(135deg,#ffb020,#e08c00)' },
 ];
 
-export const ROLE_CHIPS = ['Shopify Developers', 'WordPress Engineers', 'SEO Strategists', 'Mobile Developers', 'UI/UX Designers', 'QA Engineers', 'Project Managers', 'Content Writers'];
+export const ROLE_CHIPS = ['Shopify Developers', 'WordPress Engineers', 'SEO Strategists', 'Digital Marketers', 'Video Editors', 'Mobile Developers', 'UI/UX Designers', 'QA Engineers', 'Project Managers', 'Content Writers'];
 
 export const TESTIMONIALS = [
   { quote: 'Techlifai rebuilt our storefront and our conversion rate jumped within the first month. Communication was clear the entire way through.', name: 'Alina Cortez', role: 'Founder, Marrow Coffee', grad: 'linear-gradient(135deg,#00e6a8,#00b386)' },
