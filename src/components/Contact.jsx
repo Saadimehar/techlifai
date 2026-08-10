@@ -46,11 +46,11 @@ export default function Contact() {
             </div>
             <div className="contact-info-item">
               <div className="ic"><IconPhone /></div>
-              <div><b>Phone</b><span>+92 300 0000000</span></div>
+              <div><b>Phone</b><span>+44 20 7123 4567</span></div>
             </div>
             <div className="contact-info-item">
               <div className="ic"><IconPin /></div>
-              <div><b>Based in</b><span>Lahore, Pakistan — working with clients worldwide</span></div>
+              <div><b>Based in</b><span>78 Edgehill RdMitcham CR4 2HW, London, UK — working with clients worldwide</span></div>
             </div>
           </Reveal>
         </div>

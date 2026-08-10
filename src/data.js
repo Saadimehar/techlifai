@@ -1,6 +1,6 @@
 import { IconCode, IconWP, IconWebflow, IconShop, IconApp, IconSEO, IconAI } from './icons.jsx';
 
-export const CONTACT_EMAIL = 'itzsaadi.99@gmail.com';
+export const CONTACT_EMAIL = 'techlifai@gmail.com';
 
 export const NAV_ITEMS = [
   { id: 'home', label: 'Home' },
