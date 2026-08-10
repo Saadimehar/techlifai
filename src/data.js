@@ -32,7 +32,46 @@ export const PROJECT_CATS = ['All', 'Web Dev', 'WordPress', 'Webflow', 'Shopify'
 
 export const PROJECTS = [
   { cat: 'Web Dev', tag: 'Web Development', title: 'Northline Logistics Platform', desc: 'A React + Node dashboard for real-time fleet tracking across 300+ vehicles.' },
-  { cat: 'WordPress', tag: 'WordPress', title: 'Alder & Co. Law Firm Site', desc: 'Custom WordPress theme with case-study CMS and a 40% faster load time.' },
+  {
+    cat: 'WordPress',
+    tag: 'WordPress Website',
+    title: 'Krypto Advantage — Crypto & Finance News',
+    desc: 'Premium WordPress publication delivering daily crypto, finance, and tech-AI intelligence with a bold editorial layout.',
+    image: getImage('crypto.jpg'),
+    link: 'https://kryptoadvantage.com'
+  },
+  {
+    cat: 'WordPress',
+    tag: 'WordPress Website',
+    title: 'Work Tools Scout — AI & Productivity Blog',
+    desc: 'Content-rich WordPress hub reviewing AI tools, remote-work setups, and productivity software with trending tags.',
+    image: getImage('ai.jpg'),
+    link: 'https://worktoolscout.com'
+  },
+  {
+    cat: 'WordPress',
+    tag: 'WordPress Website',
+    title: 'Curvy Workwear — Fashion & Lifestyle Blog',
+    desc: 'Stylish WordPress fashion blog covering apparel, accessories, and lifestyle picks with curated product reviews.',
+    image: getImage('ww.jpg'),
+    link: 'https://curvyworkwear.com'
+  },
+  {
+    cat: 'WordPress',
+    tag: 'WordPress Website',
+    title: 'Kloutra — Tech & AI News Blog',
+    desc: 'Fast-loading WordPress news platform covering AI, digital marketing, SaaS, and technology with clean, browsable categories.',
+    image: getImage('ai2.jpg'),
+    link: 'https://kloutra.com'
+  },
+  {
+    cat: 'WordPress',
+    tag: 'WordPress Website',
+    title: 'Hylavita — Health & Wellness Blog',
+    desc: 'Clean, editorial WordPress site delivering evidence-based health content across fitness, nutrition, and mental wellness.',
+    image: getImage('health.jpg'),
+    link: 'https://hylavita.com'
+  },
   { cat: 'Webflow', tag: 'Webflow', title: 'Solace Wellness Studio', desc: 'Animated Webflow marketing site with CMS-driven class schedules.' },
   {
     cat: 'Shopify',
@@ -82,7 +121,6 @@ export const PROJECTS = [
   { cat: 'Web Dev', tag: 'Web Development', title: 'Ivorton Real Estate Portal', desc: 'Listings platform with map search built on React and a headless CMS.' },
   { cat: 'AI', tag: 'AI Automation', title: 'Rowan HR Assistant', desc: 'Internal AI agent that automates onboarding paperwork and FAQs.' },
   { cat: 'App Dev', tag: 'App Development', title: 'Cobalt Field Ops', desc: 'Offline-first field service app for on-site technicians.' },
-  { cat: 'WordPress', tag: 'WordPress', title: 'Milbrook Dental Group', desc: 'Multi-location WordPress site with booking and review integrations.' },
 ];
 
 export const TEAM = [

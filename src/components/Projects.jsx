@@ -37,7 +37,7 @@ export default function Projects() {
                 <div className="project-actions">
                   {p.link ? (
                     <a href={p.link} target="_blank" rel="noreferrer" className="project-link project-link-external">
-                      Visit store <IconArrow width="14" height="14" />
+                      Visit website <IconArrow width="14" height="14" />
                     </a>
                   ) : (
                     <a
