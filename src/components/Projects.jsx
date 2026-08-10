@@ -28,22 +28,30 @@ export default function Projects() {
           {filtered.map((p, i) => (
             <Reveal as="div" delay={(i % 3) + 1} className="project-card" key={p.title}>
               <div className="project-thumb">
-                <span>{p.title.slice(0, 2).toUpperCase()}</span>
+                {p.image ? <img src={p.image} alt={p.title} className="project-image" /> : <span>{p.title.slice(0, 2).toUpperCase()}</span>}
               </div>
               <div className="project-body">
                 <span className="project-tag">{p.tag}</span>
                 <h3>{p.title}</h3>
                 <p>{p.desc}</p>
-                <a
-                  href="#contact"
-                  className="project-link"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                >
-                  View case study <IconArrow width="14" height="14" />
-                </a>
+                <div className="project-actions">
+                  {p.link ? (
+                    <a href={p.link} target="_blank" rel="noreferrer" className="project-link project-link-external">
+                      Visit store <IconArrow width="14" height="14" />
+                    </a>
+                  ) : (
+                    <a
+                      href="#contact"
+                      className="project-link"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                      }}
+                    >
+                      View case study <IconArrow width="14" height="14" />
+                    </a>
+                  )}
+                </div>
               </div>
             </Reveal>
           ))}

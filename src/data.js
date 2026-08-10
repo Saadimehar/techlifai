@@ -1,5 +1,9 @@
 import { IconCode, IconWP, IconWebflow, IconShop, IconApp, IconSEO, IconAI, IconMarketing, IconVideo } from './icons.jsx';
 
+const IMAGE_ASSETS = import.meta.glob('./images/*.{jpg,jpeg,png,webp}', { eager: true, import: 'default' });
+const getImage = (fileName) => IMAGE_ASSETS[`./images/${fileName}`];
+
+
 export const CONTACT_EMAIL = 'techlifai@gmail.com';
 
 export const NAV_ITEMS = [
@@ -30,14 +34,52 @@ export const PROJECTS = [
   { cat: 'Web Dev', tag: 'Web Development', title: 'Northline Logistics Platform', desc: 'A React + Node dashboard for real-time fleet tracking across 300+ vehicles.' },
   { cat: 'WordPress', tag: 'WordPress', title: 'Alder & Co. Law Firm Site', desc: 'Custom WordPress theme with case-study CMS and a 40% faster load time.' },
   { cat: 'Webflow', tag: 'Webflow', title: 'Solace Wellness Studio', desc: 'Animated Webflow marketing site with CMS-driven class schedules.' },
-  { cat: 'Shopify', tag: 'Shopify', title: 'Marrow Coffee Roasters', desc: 'Shopify storefront rebuild that lifted conversion rate by 28%.' },
+  {
+    cat: 'Shopify',
+    tag: 'Shopify Store',
+    title: 'Mireya — Fine Jewelry Store',
+    desc: 'Elegant Shopify storefront for a jewelry brand with a soft romantic aesthetic and mobile-first shopping flow.',
+    image: getImage('6.jpg'),
+    link: 'https://0samge-1n.myshopify.com/'
+  },
+  {
+    cat: 'Shopify',
+    tag: 'Shopify Store',
+    title: 'Kalon — Skincare Store',
+    desc: 'Minimal, editorial-style Shopify storefront for a skincare brand with clean product photography and a calming aesthetic.',
+    image: getImage('9.jpg'),
+    link: 'https://xv5mb1-cm.myshopify.com/'
+  },
+  {
+    cat: 'Shopify',
+    tag: 'Shopify Store',
+    title: 'Shopemirmart — Tech & Gadgets Store',
+    desc: 'Bold, high-energy Shopify storefront for a multi-category electronics store with dynamic promo banners and organized navigation.',
+    image: getImage('11.jpg'),
+    link: 'https://0yq7zq-wj.myshopify.com/'
+  },
+  {
+    cat: 'Shopify',
+    tag: 'Shopify Store',
+    title: 'Emirates Souq — Multi-Category Gulf Marketplace',
+    desc: 'Vibrant Shopify storefront for UAE/KSA shoppers spanning tech, beauty, and home categories with fast regional delivery.',
+    image: getImage('4.jpg'),
+    link: 'https://emiratessouq.site/'
+  },
+  {
+    cat: 'Shopify',
+    tag: 'Shopify Store',
+    title: 'Nextons — General Merchandise Store',
+    desc: 'Trust-focused Shopify storefront with curated baby, car, cosmetics, and fitness collections and clear buyer guarantees.',
+    image: getImage('5.jpg'),
+    link: 'https://nextons.store/'
+  },
   { cat: 'Digital Marketing', tag: 'Digital Marketing', title: 'Northshore Growth Campaign', desc: 'Multi-channel digital marketing campaign with paid search, landing pages and email automation.' },
   { cat: 'Video Editing', tag: 'Video Editing', title: 'Pulse Media Content Engine', desc: 'Fast-paced short-form video editing system for social ads, YouTube shorts and product promos.' },
   { cat: 'App Dev', tag: 'App Development', title: 'Fettle Fitness Tracker', desc: 'Cross-platform iOS/Android app with habit tracking and social streaks.' },
   { cat: 'SEO', tag: 'SEO', title: 'Bramwell Home Goods', desc: 'Technical SEO overhaul that took organic traffic from 4K to 41K monthly.' },
   { cat: 'AI', tag: 'AI Automation', title: 'Kestrel Support Bot', desc: 'AI chatbot + workflow automation that resolved 62% of tickets with zero agent time.' },
   { cat: 'Web Dev', tag: 'Web Development', title: 'Ivorton Real Estate Portal', desc: 'Listings platform with map search built on React and a headless CMS.' },
-  { cat: 'Shopify', tag: 'Shopify', title: 'Palette Skincare', desc: 'Subscription-based Shopify build with custom bundle logic.' },
   { cat: 'AI', tag: 'AI Automation', title: 'Rowan HR Assistant', desc: 'Internal AI agent that automates onboarding paperwork and FAQs.' },
   { cat: 'App Dev', tag: 'App Development', title: 'Cobalt Field Ops', desc: 'Offline-first field service app for on-site technicians.' },
   { cat: 'WordPress', tag: 'WordPress', title: 'Milbrook Dental Group', desc: 'Multi-location WordPress site with booking and review integrations.' },

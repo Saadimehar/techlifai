@@ -233,6 +233,7 @@ section{position:relative; z-index:1;}
   background:linear-gradient(135deg, var(--surface-2), var(--bg-2));
   overflow:hidden;
 }
+.project-image{width:100%; height:100%; object-fit:cover; display:block;}
 .project-thumb::after{
   content:''; position:absolute; inset:0; opacity:0.5;
   background-image:linear-gradient(rgba(234,239,245,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(234,239,245,0.06) 1px, transparent 1px);
@@ -243,7 +244,9 @@ section{position:relative; z-index:1;}
 .project-tag{font-family:var(--font-mono); font-size:10.5px; color:var(--mint); letter-spacing:1px; text-transform:uppercase;}
 .project-body h3{font-family:var(--font-display); font-size:17px;}
 .project-body p{color:var(--muted); font-size:13.5px; flex:1;}
+.project-actions{display:flex; flex-wrap:wrap; gap:10px; margin-top:4px;}
 .project-link{font-size:13px; font-weight:600; color:var(--text); display:inline-flex; align-items:center; gap:6px; margin-top:4px;}
+.project-link-external{padding:10px 16px; border-radius:999px; border:1px solid rgba(0,230,168,0.28); background:linear-gradient(135deg, rgba(0,230,168,0.16), rgba(124,107,240,0.12)); box-shadow:0 8px 18px rgba(0,0,0,0.18);}
 .project-link svg{width:14px; height:14px; transition:transform .2s ease;}
 .project-card:hover .project-link svg{transform:translate(3px,-3px);}
 
@@ -350,6 +353,7 @@ section{position:relative; z-index:1;}
   .services-grid{grid-template-columns:1fr;}
   .service-card h3{font-size:18px;}
   .project-thumb{height:130px;}
+  .project-image{object-position:center top;}
   .project-thumb span{font-size:28px;}
   .filter-row{gap:8px; margin-bottom:24px;}
   .filter-btn{padding:8px 14px; font-size:12.5px;}
