@@ -63,6 +63,7 @@ img,svg{display:block; max-width:100%;}
   padding:12px 0;
 }
 .nav-inner{display:flex; align-items:center; justify-content:space-between; gap:24px;}
+.nav-actions{display:flex; align-items:center; gap:10px; flex-shrink:0;}
 .brand{display:flex; align-items:center; gap:10px; font-family:var(--font-display); font-weight:700; font-size:20px; letter-spacing:0.2px;}
 .brand-mark{
   width:32px; height:32px; position:relative; flex-shrink:0;
@@ -82,7 +83,7 @@ img,svg{display:block; max-width:100%;}
   display:flex; align-items:center; gap:8px;
 }
 .nav-cta:hover{border-color:var(--mint); background:rgba(0,230,168,0.08); transform:translateY(-1px);}
-.nav-toggle{display:flex; background:none; border:none; color:var(--text); padding:6px;}
+.nav-toggle{display:inline-flex; align-items:center; justify-content:center; width:42px; height:42px; background:rgba(18,24,40,0.72); border:1px solid var(--border-strong); border-radius:12px; color:var(--text); padding:0;}
 .nav-mobile{
   display:none; position:fixed; top:64px; left:16px; right:16px; z-index:99;
   background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:10px;
@@ -98,6 +99,15 @@ img,svg{display:block; max-width:100%;}
 }
 @media (max-width:900px){
   .nav-cta{display:none;}
+  .nav-inner{gap:12px;}
+  .brand{font-size:18px;}
+  .brand small{font-size:8px; letter-spacing:1.2px;}
+  .nav-toggle{width:44px; height:44px; box-shadow:0 10px 24px rgba(0,0,0,0.25);}
+}
+
+@media (max-width:520px){
+  .brand small{display:none;}
+  .nav-inner{gap:10px;}
 }
 
 /* ===== SECTION SHELL ===== */

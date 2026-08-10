@@ -79,7 +79,7 @@ export default function Navbar({ active, mobileOpen, setMobileOpen, onNavigate, 
             </li>
           </ul>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+          <div className="nav-actions">
             <a href="#contact" className="nav-cta" onClick={go('contact')}>
               Start a project <IconArrow width="14" height="14" />
             </a>
