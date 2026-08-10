@@ -42,7 +42,7 @@ export const PROJECTS = [
 export const TEAM = [
   { name: 'Muhammad Saad', role: 'Founder & Lead Developer', desc: 'Full-stack engineer leading architecture across every build we ship.', skills: ['Webflow', 'UI/UX', 'Design Systems'], grad: 'linear-gradient(135deg,#00e6a8,#00b386)' },
   { name: 'Asadullah Turab', role: 'CTO & AI Specialist', desc: 'Designs and builds the visual systems behind our Webflow and brand work.', skills: ['React', 'Node.js', 'AI Agents'], grad: 'linear-gradient(135deg,#7c6bf0,#5644c9)' },
-  { name: 'Muzammil Farooq', role: 'SEO Specialist & Lead', desc: 'Builds the chatbots and automation pipelines that run inside client businesses.', skills: ['SEO', 'Python', 'Workflow Automation'], grad: 'linear-gradient(135deg,#ffb020,#e08c00)' },
+  { name: 'Athar Ali', role: 'COO', desc: 'Manages the day-to-day operations and ensures the company is running efficiently.', skills: ['SEO', 'Python', 'Workflow Automation'], grad: 'linear-gradient(135deg,#ffb020,#e08c00)' },
 ];
 
 export const ROLE_CHIPS = ['Shopify Developers', 'WordPress Engineers', 'SEO Strategists', 'Mobile Developers', 'UI/UX Designers', 'QA Engineers', 'Project Managers', 'Content Writers'];
