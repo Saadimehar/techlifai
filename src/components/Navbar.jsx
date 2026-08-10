@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { NAV_ITEMS } from '../data.js';
 import { IconArrow, IconMenu, IconClose } from '../icons.jsx';
 
-export default function Navbar({ active, mobileOpen, setMobileOpen }) {
+export default function Navbar({ active, mobileOpen, setMobileOpen, onNavigate, currentPath }) {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -14,14 +14,41 @@ export default function Navbar({ active, mobileOpen, setMobileOpen }) {
   const go = (id) => (e) => {
     e.preventDefault();
     setMobileOpen(false);
+
+    if (currentPath === '/blog') {
+      onNavigate('/', id);
+      return;
+    }
+
+    if (id === 'home') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const goHome = (e) => {
+    e.preventDefault();
+    setMobileOpen(false);
+    if (currentPath === '/blog') {
+      onNavigate('/');
+      return;
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const goBlog = (e) => {
+    e.preventDefault();
+    setMobileOpen(false);
+    onNavigate('/blog');
   };
 
   return (
     <>
       <nav className={`nav${scrolled ? ' scrolled' : ''}`}>
         <div className="wrap nav-inner">
-          <a href="#home" className="brand" onClick={go('home')}>
+          <a href="/" className="brand" onClick={goHome}>
             <span className="brand-mark">
               <svg viewBox="0 0 32 32" fill="none">
                 <rect x="3.5" y="3.5" width="25" height="25" rx="8" stroke="#00e6a8" strokeWidth="1.6" />
@@ -45,6 +72,11 @@ export default function Navbar({ active, mobileOpen, setMobileOpen }) {
                 </a>
               </li>
             ))}
+            <li>
+              <a href="/blog" className={active === 'blog' ? 'active' : ''} onClick={goBlog}>
+                Blog
+              </a>
+            </li>
           </ul>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
@@ -64,6 +96,9 @@ export default function Navbar({ active, mobileOpen, setMobileOpen }) {
             {it.label}
           </a>
         ))}
+        <a href="/blog" className={active === 'blog' ? 'active' : ''} onClick={goBlog}>
+          Blog
+        </a>
       </div>
     </>
   );

@@ -52,3 +52,62 @@ export const TESTIMONIALS = [
   { quote: 'The AI support bot they built now handles most of our repetitive tickets. Our team finally has room to focus on real problems.', name: 'Devon Marsh', role: 'Ops Lead, Kestrel', grad: 'linear-gradient(135deg,#7c6bf0,#5644c9)' },
   { quote: 'Our organic traffic grew tenfold after their SEO work. They explained every decision instead of just handing us a report.', name: 'Priya Nathan', role: 'CEO, Bramwell Home Goods', grad: 'linear-gradient(135deg,#ffb020,#e08c00)' },
 ];
+
+export const BLOG_POSTS = [
+  {
+    slug: 'seo-for-modern-websites',
+    title: 'SEO for Modern Websites: How to Rank in a Competitive Market',
+    excerpt: 'Learn how technical SEO, page speed and structured content help your website earn visibility for high-intent keywords.',
+    category: 'SEO',
+    readTime: '6 min read',
+    keywords: ['SEO', 'technical SEO', 'keyword strategy'],
+    image: 'https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=900&q=80',
+    content: [
+      'Search engine optimization is no longer just about stuffing keywords into page copy. Modern SEO requires a thoughtful mix of technical health, fast loading experiences, relevant content and strategic internal linking.',
+      'A strong SEO foundation starts with a clear keyword strategy. Instead of chasing broad terms, businesses should focus on intent-based queries that align with what their audience is trying to accomplish.',
+      'Technical details such as clean URL structure, schema markup, mobile responsiveness and optimized metadata all help search engines understand your site. When these are handled well, your content has a better chance to rank and convert.'
+    ]
+  },
+  {
+    slug: 'shopify-storefront-optimization',
+    title: 'Shopify Storefront Optimization: Better UX, More Conversions',
+    excerpt: 'A practical guide to improving product pages, mobile speed and checkout flow for ecommerce growth.',
+    category: 'Shopify',
+    readTime: '5 min read',
+    keywords: ['Shopify', 'conversion rate', 'ecommerce'],
+    image: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80',
+    content: [
+      'Shopify stores can gain a lot from a deliberate focus on storefront performance. The fastest wins usually come from improving mobile usability, simplifying navigation and sharpening the product page experience.',
+      'A strong product page should answer key questions quickly: what does the product do, why should someone buy it and what makes it trustworthy? Clear visuals, strong copy and social proof can dramatically increase confidence.',
+      'Optimizing the checkout journey matters just as much. Reducing friction for returning visitors, improving page speed and using well-placed upsells can raise average order values without making the experience feel overcomplicated.'
+    ]
+  },
+  {
+    slug: 'ai-automation-for-small-business',
+    title: 'AI Automation for Small Business: Where to Start Without Overcomplicating Things',
+    excerpt: 'See how intelligent automations can reduce repetitive admin work while improving customer experience.',
+    category: 'AI',
+    readTime: '4 min read',
+    keywords: ['AI automation', 'workflow automation', 'small business'],
+    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=900&q=80',
+    content: [
+      'Many businesses are tempted to automate everything at once. In practice, the best automation projects begin with a single repetitive workflow that consumes time and creates avoidable errors.',
+      'A great first step is often customer support, lead qualification or internal reporting. These tasks benefit from AI because they are repetitive, predictable and easy to measure.',
+      'The real advantage of automation is not just speed. It is consistency, faster response times and more room for your team to focus on high-value work that requires human judgment.'
+    ]
+  },
+  {
+    slug: 'webflow-vs-react-for-growth-sites',
+    title: 'Webflow vs React for Growth Sites: What Should You Choose?',
+    excerpt: 'Compare the tradeoffs between visual editors and custom code to decide what fits your growth goals best.',
+    category: 'Web Development',
+    readTime: '7 min read',
+    keywords: ['Webflow', 'React', 'growth website'],
+    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=80',
+    content: [
+      'A growth site often needs both speed and flexibility. Webflow can be ideal for teams that want polished marketing pages and a fast visual workflow, while React is better when custom logic and deep integrations are required.',
+      'The right choice usually depends on the complexity of the product and how much control your team needs over the frontend experience. If the site is mainly content and marketing-focused, Webflow can be a strong fit.',
+      'If your team needs advanced interactions, custom APIs or a unique user experience, a React-based build gives more freedom. In many cases, the best result comes from combining the strengths of both approaches.'
+    ]
+  }
+];
