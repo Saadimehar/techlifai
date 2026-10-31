@@ -44,7 +44,12 @@ export function Layout({ children }) {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   useEffect(() => { const fn = () => setScrolled(window.scrollY > 20); window.addEventListener('scroll', fn); return () => window.removeEventListener('scroll', fn); }, []);
-  const links = [...NAV_ITEMS.filter((item) => !['home', 'team'].includes(item.id)).map((item) => ({ label: item.label, to: `/${item.id}` })), { label: 'Industries', to: '/industries' }, { label: 'Blog', to: '/blog' }];
+  const links = [
+    { label: 'Services', to: '/services' },
+    { label: 'Industries', to: '/industries' },
+    ...NAV_ITEMS.filter((item) => !['home', 'team', 'services'].includes(item.id)).map((item) => ({ label: item.label, to: `/${item.id}` })),
+    { label: 'Blog', to: '/blog' },
+  ];
   return <>
     <header className={`site-nav ${scrolled ? 'is-scrolled' : ''}`}>
       <div className="container nav-inner"><Link className="brand" to="/"><img src="/logo.svg" alt="Techlifai" onError={(e) => { e.currentTarget.style.display = 'none'; }} /><span>Techlifai<small>Digital growth studio</small></span></Link>
