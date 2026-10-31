@@ -1,10 +1,21 @@
-import { IconCode, IconWP, IconWebflow, IconShop, IconApp, IconSEO, IconAI, IconMarketing, IconVideo } from './icons.jsx';
+import { IconCode, IconWP, IconWebflow, IconShop, IconApp, IconSEO, IconAI, IconMarketing, IconVideo, IconPin } from './icons.jsx';
 
 const IMAGE_ASSETS = import.meta.glob('./images/*.{jpg,jpeg,png,webp}', { eager: true, import: 'default' });
 const getImage = (fileName) => IMAGE_ASSETS[`./images/${fileName}`];
 
 
 export const CONTACT_EMAIL = 'techlifai@gmail.com';
+export const CONTACT_PHONE = '+49 30 1234 5678';
+export const COMPANY_ADDRESS = 'Musterstrasse 12, 10115 Berlin, Germany';
+export const CALENDLY_URL = '';
+export const FORMSPREE_URL = '';
+export const SOCIAL_LINKS = {
+  LinkedIn: 'https://www.linkedin.com/',
+  Instagram: 'https://www.instagram.com/',
+  Facebook: 'https://www.facebook.com/',
+  X: 'https://x.com/',
+  TikTok: 'https://www.tiktok.com/',
+};
 
 export const NAV_ITEMS = [
   { id: 'home', label: 'Home' },
@@ -26,6 +37,17 @@ export const SERVICES = [
   { icon: IconApp, title: 'App Development', tag: 'iOS · Android', desc: 'Native and cross-platform mobile apps, from first wireframe to App Store launch.' },
   { icon: IconSEO, title: 'SEO', tag: 'Growth', desc: 'Technical SEO, content strategy and link building that moves you up the results page and stays there.' },
   { icon: IconAI, title: 'AI Automation', tag: 'Chatbots · Workflows', desc: 'AI chatbots, agents and workflow automation that cut manual work out of your business.' },
+];
+
+export const INDUSTRIES = [
+  { title: 'Healthcare', icon: IconAI, items: ['Clinics & dentists', 'Health platforms', 'Wellness brands', 'Medical practices'] },
+  { title: 'Real Estate', icon: IconPin, items: ['Estate agencies', 'Property developers', 'Real estate investors', 'Property management'] },
+  { title: 'E-commerce', icon: IconShop, items: ['Fashion & apparel', 'Beauty & cosmetics', 'Health & supplements', 'Consumer products'] },
+  { title: 'Professional Services', icon: IconMarketing, items: ['Consultancies', 'Financial advisors', 'Legal practices', 'Recruitment firms'] },
+  { title: 'Technology & SaaS', icon: IconCode, items: ['SaaS products', 'Startups', 'AI companies', 'Technology platforms'] },
+  { title: 'Home & Local Services', icon: IconPin, items: ['Home remodelers', 'HVAC & plumbing', 'Construction companies', 'Automotive services'] },
+  { title: 'Education', icon: IconApp, items: ['Online learning', 'Training providers', 'Schools & academies', 'Coaching businesses'] },
+  { title: 'Hospitality & Travel', icon: IconWebflow, items: ['Hotels & stays', 'Restaurants', 'Travel brands', 'Experiences'] },
 ];
 
 export const PROJECT_CATS = ['All', 'Web Dev', 'WordPress', 'Webflow', 'Shopify', 'Digital Marketing', 'Video Editing', 'App Dev', 'SEO', 'AI'];
@@ -124,9 +146,9 @@ export const PROJECTS = [
 ];
 
 export const TEAM = [
-  { name: 'Muhammad Saad', role: 'Founder & Lead Developer', desc: 'Full-stack engineer leading architecture across every build we ship.', skills: ['Webflow', 'UI/UX', 'Design Systems'], grad: 'linear-gradient(135deg,#00e6a8,#00b386)' },
-  { name: 'Asadullah Turab', role: 'CTO & AI Specialist', desc: 'Designs and builds the visual systems behind our Webflow and brand work.', skills: ['React', 'Node.js', 'AI Agents'], grad: 'linear-gradient(135deg,#7c6bf0,#5644c9)' },
-  { name: 'Athar Ali', role: 'COO', desc: 'Manages the day-to-day operations and ensures the company is running efficiently.', skills: ['SEO', 'Python', 'Workflow Automation'], grad: 'linear-gradient(135deg,#ffb020,#e08c00)' },
+  { name: 'Muhammad Saad', role: 'Founder & Lead Developer', desc: 'Full-stack engineer leading architecture across every build we ship.', skills: ['Webflow', 'UI/UX', 'Design Systems'], grad: 'linear-gradient(135deg,#164e63,#8ad8f0)' },
+  { name: 'Asadullah Turab', role: 'CTO & AI Specialist', desc: 'Designs and builds the visual systems behind our Webflow and brand work.', skills: ['React', 'Node.js', 'AI Agents'], grad: 'linear-gradient(135deg,#244b68,#8aaec8)' },
+  { name: 'Athar Ali', role: 'COO', desc: 'Manages the day-to-day operations and ensures the company is running efficiently.', skills: ['SEO', 'Python', 'Workflow Automation'], grad: 'linear-gradient(135deg,#506d83,#b9dbe8)' },
 ];
 
 export const ROLE_CHIPS = ['Shopify Developers', 'WordPress Engineers', 'SEO Strategists', 'Digital Marketers', 'Video Editors', 'Mobile Developers', 'UI/UX Designers', 'QA Engineers', 'Project Managers', 'Content Writers'];
