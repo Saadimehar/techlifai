@@ -183,9 +183,9 @@ export const PROJECTS = [
 ];
 
 export const TEAM = [
-  { name: 'Muhammad Saad', role: 'Founder & Lead Developer', desc: 'Full-stack engineer leading architecture across every build we ship.', skills: ['Webflow', 'UI/UX', 'Design Systems'], grad: 'linear-gradient(135deg,#164e63,#8ad8f0)' },
-  { name: 'Asadullah Turab', role: 'CTO & AI Specialist', desc: 'Designs and builds the visual systems behind our Webflow and brand work.', skills: ['React', 'Node.js', 'AI Agents'], grad: 'linear-gradient(135deg,#244b68,#8aaec8)' },
-  { name: 'Athar Ali', role: 'COO', desc: 'Manages the day-to-day operations and ensures the company is running efficiently.', skills: ['SEO', 'Python', 'Workflow Automation'], grad: 'linear-gradient(135deg,#506d83,#b9dbe8)' },
+  { name: 'Huzaifa bin Masood', role: 'Founder', desc: 'Sets the vision and leads Techlifai toward useful, measurable digital outcomes.', skills: ['Strategy', 'Leadership', 'Growth Systems'], grad: 'linear-gradient(135deg,#164e63,#8ad8f0)' },
+  { name: 'Muhammad Saad', role: 'CEO', desc: 'Guides client partnerships and turns ambitious business goals into focused digital roadmaps.', skills: ['Product Strategy', 'Client Growth', 'Operations'], grad: 'linear-gradient(135deg,#244b68,#8aaec8)' },
+  { name: 'Asadullah Turab', role: 'CTO', desc: 'Leads the technical direction across web platforms, AI systems and scalable product builds.', skills: ['React', 'Node.js', 'AI Agents'], grad: 'linear-gradient(135deg,#506d83,#b9dbe8)' },
 ];
 
 export const ROLE_CHIPS = ['Shopify Developers', 'WordPress Engineers', 'SEO Strategists', 'Digital Marketers', 'Video Editors', 'Mobile Developers', 'UI/UX Designers', 'QA Engineers', 'Project Managers', 'Content Writers'];
