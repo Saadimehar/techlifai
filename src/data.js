@@ -7,6 +7,11 @@ const getImage = (fileName) => IMAGE_ASSETS[`./images/${fileName}`];
 export const CONTACT_EMAIL = 'techlifai@gmail.com';
 export const CONTACT_PHONE = '+49 30 1234 5678';
 export const COMPANY_ADDRESS = 'Musterstrasse 12, 10115 Berlin, Germany';
+export const EMAILJS = {
+  SERVICE_ID: 'service_techlifai',
+  TEMPLATE_ID: 'template_6z4u9qd',
+  PUBLIC_KEY: 'xPB2wRXh8nJMbvOBI',
+};
 export const CALENDLY_URL = '';
 export const FORMSPREE_URL = '';
 export const SOCIAL_LINKS = {
