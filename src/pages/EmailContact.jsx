@@ -6,9 +6,11 @@ import { CONTACT_EMAIL, CONTACT_PHONE, COMPANY_ADDRESS, EMAILJS, SERVICES, SOCIA
 import { IconAI, IconArrow, IconMail, IconPhone, IconPin } from '../icons.jsx';
 
 export default function EmailContact() {
-  const [form, setForm] = useState({ name: '', email: '', service: 'Web Development', budget: '', message: '' });
+  const [form, setForm] = useState({ name: '', email: '', service: 'Web Development', customService: '', budget: '', message: '' });
   const [status, setStatus] = useState('');
   const [sending, setSending] = useState(false);
+  const [serviceOpen, setServiceOpen] = useState(false);
+  const serviceOptions = [...SERVICES.map((service) => service.title), 'Other / custom service'];
 
   const update = (key) => (event) => setForm((current) => ({ ...current, [key]: event.target.value }));
 
@@ -24,7 +26,7 @@ export default function EmailContact() {
         {
           name: form.name,
           email: form.email,
-          service: form.service,
+          service: form.service === 'Other / custom service' ? form.customService : form.service,
           budget: form.budget,
           message: form.message,
           to_email: CONTACT_EMAIL,
@@ -32,7 +34,7 @@ export default function EmailContact() {
         { publicKey: EMAILJS.PUBLIC_KEY }
       );
       setStatus('Thanks - your message has been sent successfully.');
-      setForm({ name: '', email: '', service: 'Web Development', budget: '', message: '' });
+      setForm({ name: '', email: '', service: 'Web Development', customService: '', budget: '', message: '' });
     } catch (error) {
       setStatus('We could not send your message right now. Please email us directly.');
     } finally {
@@ -77,9 +79,31 @@ export default function EmailContact() {
                 <label>Email<input required type="email" value={form.email} onChange={update('email')} placeholder="you@company.com" /></label>
               </div>
               <div className="form-row">
-                <label>Service<select value={form.service} onChange={update('service')}>{SERVICES.map((service) => <option key={service.title}>{service.title}</option>)}</select></label>
-                <label>Budget<select value={form.budget} onChange={update('budget')}><option value="">Select a range</option><option>€2k-€5k</option><option>€5k-€10k</option><option>€10k+</option></select></label>
+                <label>Service
+                  <div className={`contact-service-menu${serviceOpen ? ' expanded' : ''}`}>
+                    <button type="button" className="contact-service-trigger" onClick={() => setServiceOpen((open) => !open)} aria-expanded={serviceOpen}>
+                      <span>{form.service}</span><span className="contact-service-chevron">⌄</span>
+                    </button>
+                    <div className="contact-service-dropdown">
+                      {serviceOptions.map((option) => (
+                        <button
+                          type="button"
+                          className={form.service === option ? 'selected' : ''}
+                          key={option}
+                          onClick={() => {
+                            setForm((current) => ({ ...current, service: option }));
+                            setServiceOpen(false);
+                          }}
+                        >
+                          {option}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                </label>
+                <label>Budget<input type="text" value={form.budget} onChange={update('budget')} placeholder="€ / $  e.g. 5,000 - 10,000" /></label>
               </div>
+              {form.service === 'Other / custom service' && <label>What service do you need?<input required value={form.customService} onChange={update('customService')} placeholder="Describe your service" /></label>}
               <label>Project details<textarea required value={form.message} onChange={update('message')} placeholder="What are you trying to achieve?" /></label>
               <button className="btn btn-primary" type="submit" disabled={sending}>{sending ? 'Sending...' : 'Send message'} <IconArrow width="15" /></button>
               {status && <p className="form-status" role="status">{status}</p>}
