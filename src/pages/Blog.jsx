@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import BLOG_POSTS from '../blogData.js';
+import { BLOG_POSTS } from '../data.js';
 import { IconArrow } from '../icons.jsx';
 import { PageHeader, Section } from '../components/Site.jsx';
 import { Meta } from './pageHelpers.jsx';

@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
-import BLOG_POSTS from '../blogData.js';
+import { BLOG_POSTS } from '../data.js';
 import { PageHeader } from '../components/Site.jsx';
 import { Meta } from './pageHelpers.jsx';
 

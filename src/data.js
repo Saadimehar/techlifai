@@ -12,8 +12,6 @@ export const EMAILJS = {
   TEMPLATE_ID: 'template_6z4u9qd',
   PUBLIC_KEY: 'xPB2wRXh8nJMbvOBI',
 };
-export const CALENDLY_URL = '';
-export const FORMSPREE_URL = '';
 export const SOCIAL_LINKS = {
   LinkedIn: 'https://www.linkedin.com/',
   Instagram: 'https://www.instagram.com/',
