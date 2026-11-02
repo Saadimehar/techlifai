@@ -68,7 +68,7 @@ export const PROJECTS = [
     title: 'Zahoor Perfumes',
     desc: 'A polished product-led website combining premium visual design, product discovery and a smooth mobile experience.',
     image: getImage('zahoor.png'),
-    link: 'https://zahoorperfumes.com'
+    link: 'https://zahoorperfumes.netlify.app/'
   },
   {
     cat: 'Web Dev',
@@ -76,7 +76,15 @@ export const PROJECTS = [
     title: 'CodeHub',
     desc: 'A modern coding platform website built around clear information architecture, approachable content and speed.',
     image: getImage('codehub.png'),
-    link: 'https://codehub.com'
+    link: 'https://codehubfyp.netlify.app/'
+  },
+  {
+    cat: 'Web Dev',
+    tag: 'Coding Website',
+    title: 'Redline',
+    desc: 'A sharp, responsive coding website with a focused visual system, clear content structure and fast front-end experience.',
+    image: getImage('redline.png'),
+    link: 'https://redline.sanaullah.app/'
   },
   {
     cat: 'WordPress',
