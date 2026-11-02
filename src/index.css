@@ -26,7 +26,9 @@ html,body,#root{max-width:100%;overflow-x:hidden}
 @media(max-width:520px){.nav-actions>.btn{display:none}.brand small{font-size:.47rem}.brand img{width:27px;height:27px}.hero-visual{min-height:275px}.hero .code-card{width:82%;padding:1.25rem}.hero .code-card strong{font-size:1.55rem}.hero .metric-row{padding:.55rem 0;font-size:.7rem}.float-card{font-size:.7rem;padding:.6rem .7rem}.float-one{top:3%;right:-2%}.float-two{bottom:3%;left:-2%}.section{padding:4rem 0}.workflow{grid-template-columns:1fr 1fr}.workflow-step{min-height:115px}.workflow-step i{display:none}.rating-strip{align-items:flex-start}.rating-strip strong{font-size:2.4rem}.blog-card{grid-template-columns:1fr}.blog-card img{height:160px}.footer-grid{grid-template-columns:1fr}.footer-grid>div:first-child{grid-column:auto}.social-row{display:grid;grid-template-columns:1fr 1fr}.social-row span{grid-column:span 2}.social-row a{margin:0}}
 
 .brand-wordmark{display:block; line-height:0; flex:none;}
-.brand-wordmark img{display:block; width:210px; height:auto; max-width:none; object-fit:contain;}
-footer .brand-wordmark img{width:230px;}
-@media(max-width:760px){.brand-wordmark img{width:175px;} footer .brand-wordmark img{width:205px;}}
-@media(max-width:520px){.brand-wordmark img{width:154px;} footer .brand-wordmark img{width:190px;}}
+.brand-wordmark img{display:block; width:265px !important; height:auto !important; max-width:none; object-fit:contain;}
+footer .brand-wordmark img{width:290px !important;}
+.nav-inner{min-height:88px;}
+@media(max-width:960px){.nav-inner{min-height:80px;}}
+@media(max-width:760px){.brand-wordmark img{width:220px !important;} footer .brand-wordmark img{width:250px !important;}}
+@media(max-width:520px){.brand-wordmark img{width:190px !important;} footer .brand-wordmark img{width:225px !important;}}
