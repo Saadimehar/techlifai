@@ -3,6 +3,7 @@ import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 import { IconArrow, IconClose, IconMenu } from '../icons.jsx';
 import { CONTACT_EMAIL, INDUSTRIES, NAV_ITEMS, SERVICES, SOCIAL_LINKS } from '../data.js';
+import techlifaiIcon from '../logos/techlifai-chip-icon.svg';
 
 export function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -52,7 +53,7 @@ export function Layout({ children }) {
   ];
   return <>
     <header className={`site-nav ${scrolled ? 'is-scrolled' : ''}`}>
-      <div className="container nav-inner"><Link className="brand" to="/"><img src="/logo.svg" alt="Techlifai" onError={(e) => { e.currentTarget.style.display = 'none'; }} /><span>Techlifai<small>Digital growth studio</small></span></Link>
+      <div className="container nav-inner"><Link className="brand" to="/"><img src={techlifaiIcon} alt="Techlifai logo" /><span>Techlifai<small>Digital growth studio</small></span></Link>
         <nav className={`nav-links ${open ? 'open' : ''}`}>{links.map((link) => link.label === 'Services' ? <ServiceMenu key={link.to} closeMenu={() => setOpen(false)} /> : link.label === 'Industries' ? <IndustryMenu key={link.to} closeMenu={() => setOpen(false)} /> : <NavLink key={link.to} to={link.to} onClick={() => setOpen(false)}>{link.label}</NavLink>)}</nav>
         <div className="nav-actions"><Button to="/contact#book">Book a meeting <IconArrow width="15" /></Button><button className="menu-toggle" onClick={() => setOpen(!open)} aria-label={open ? 'Close menu' : 'Open menu'}>{open ? <IconClose /> : <IconMenu />}</button></div>
       </div>
@@ -96,7 +97,7 @@ function IndustryMenu({ closeMenu }) {
 }
 
 export function Footer() {
-  return <footer><div className="container footer-grid"><div><Link className="brand" to="/"><span>Techlifai<small>Digital growth studio</small></span></Link><p>Digital products, growth systems and AI automation for ambitious companies.</p></div><div><span className="footer-label">Explore</span><Link to="/about">About</Link><Link to="/services">Services</Link><Link to="/projects">Projects</Link><Link to="/blog">Blog</Link></div><div><span className="footer-label">Connect</span><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>{Object.entries(SOCIAL_LINKS).map(([name, url]) => <a key={name} href={url} target="_blank" rel="noreferrer">{name}</a>)}</div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Techlifai. All rights reserved.</span><Link to="/contact">Start a conversation <IconArrow width="14" /></Link></div></footer>;
+  return <footer><div className="container footer-grid"><div><Link className="brand" to="/"><img src={techlifaiIcon} alt="Techlifai logo" /><span>Techlifai<small>Digital growth studio</small></span></Link><p>Digital products, growth systems and AI automation for ambitious companies.</p></div><div><span className="footer-label">Explore</span><Link to="/about">About</Link><Link to="/services">Services</Link><Link to="/projects">Projects</Link><Link to="/blog">Blog</Link></div><div><span className="footer-label">Connect</span><a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>{Object.entries(SOCIAL_LINKS).map(([name, url]) => <a key={name} href={url} target="_blank" rel="noreferrer">{name}</a>)}</div></div><div className="container footer-bottom"><span>© {new Date().getFullYear()} Techlifai. All rights reserved.</span><Link to="/contact">Start a conversation <IconArrow width="14" /></Link></div></footer>;
 }
 
 export function Card({ children, className = '' }) { return <div className={`card ${className}`}>{children}</div>; }

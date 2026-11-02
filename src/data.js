@@ -55,6 +55,30 @@ export const PROJECT_CATS = ['All', 'Web Dev', 'WordPress', 'Webflow', 'Shopify'
 export const PROJECTS = [
   { cat: 'Web Dev', tag: 'Web Development', title: 'Northline Logistics Platform', desc: 'A React + Node dashboard for real-time fleet tracking across 300+ vehicles.' },
   {
+    cat: 'Web Dev',
+    tag: 'Coding Website',
+    title: 'Haseeb ASMR',
+    desc: 'A focused coding and content website with a clear creator-led experience and responsive front-end presentation.',
+    image: getImage('1.jpg'),
+    link: 'https://haseebasmr.com'
+  },
+  {
+    cat: 'Web Dev',
+    tag: 'Coding Website',
+    title: 'Zahoor Perfumes',
+    desc: 'A polished product-led website combining premium visual design, product discovery and a smooth mobile experience.',
+    image: getImage('2.jpg'),
+    link: 'https://zahoorperfumes.com'
+  },
+  {
+    cat: 'Web Dev',
+    tag: 'Coding Website',
+    title: 'CodeHub',
+    desc: 'A modern coding platform website built around clear information architecture, approachable content and speed.',
+    image: getImage('3.jpg'),
+    link: 'https://codehub.com'
+  },
+  {
     cat: 'WordPress',
     tag: 'WordPress Website',
     title: 'Krypto Advantage — Crypto & Finance News',
