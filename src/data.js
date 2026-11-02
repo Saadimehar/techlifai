@@ -1,6 +1,10 @@
 import { IconCode, IconWP, IconWebflow, IconShop, IconApp, IconSEO, IconAI, IconMarketing, IconVideo, IconPin } from './icons.jsx';
 
-const IMAGE_ASSETS = import.meta.glob('./images/*.{jpg,jpeg,png,webp}', { eager: true, import: 'default' });
+const IMAGE_ASSETS = import.meta.glob([
+  './images/haseebasmr.png', './images/zahoor.png', './images/codehub.png', './images/redline.png',
+  './images/crypto.jpg', './images/ai.jpg', './images/ww.jpg', './images/ai2.jpg', './images/health.jpg',
+  './images/6.jpg', './images/9.jpg', './images/11.jpg', './images/4.jpg', './images/5.jpg'
+], { eager: true, import: 'default' });
 const getImage = (fileName) => IMAGE_ASSETS[`./images/${fileName}`];
 
 
