@@ -59,7 +59,7 @@ export const PROJECTS = [
     tag: 'Coding Website',
     title: 'Haseeb ASMR',
     desc: 'A focused coding and content website with a clear creator-led experience and responsive front-end presentation.',
-    image: getImage('1.jpg'),
+    image: getImage('haseebasmr.png'),
     link: 'https://haseebasmr.com'
   },
   {
@@ -67,7 +67,7 @@ export const PROJECTS = [
     tag: 'Coding Website',
     title: 'Zahoor Perfumes',
     desc: 'A polished product-led website combining premium visual design, product discovery and a smooth mobile experience.',
-    image: getImage('2.jpg'),
+    image: getImage('zahoor.png'),
     link: 'https://zahoorperfumes.com'
   },
   {
@@ -75,7 +75,7 @@ export const PROJECTS = [
     tag: 'Coding Website',
     title: 'CodeHub',
     desc: 'A modern coding platform website built around clear information architecture, approachable content and speed.',
-    image: getImage('3.jpg'),
+    image: getImage('codehub.png'),
     link: 'https://codehub.com'
   },
   {
