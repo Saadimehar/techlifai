@@ -25,10 +25,16 @@ html,body,#root{max-width:100%;overflow-x:hidden}
 @media(max-width:760px){.container{width:min(100% - 28px,1160px)}.nav-actions>.btn{font-size:.72rem;padding:.56rem .68rem}.hero{padding-top:4.2rem}.hero h1{font-size:clamp(2.8rem,11vw,4.4rem)}.hero-copy{font-size:1rem}.hero-visual{min-height:310px}.hero .code-card{width:min(330px,78%);padding:1.5rem}.hero .code-card strong{font-size:1.9rem;margin:1.2rem 0}.float-one{right:0}.float-two{left:0}.stats{grid-template-columns:repeat(2,1fr);gap:1rem}.stats>div{padding:0;border:0}.service-grid,.project-grid,.project-grid.featured,.team-grid,.review-grid,.blog-grid,.process-grid{grid-template-columns:1fr}.two-col,.contact-grid,.automation-grid{grid-template-columns:1fr;gap:2.5rem}.values-grid,.form-row{grid-template-columns:1fr}.overview-panel,.industry-hero-panel{padding:1.5rem;grid-template-columns:1fr}.overview-metrics{grid-template-columns:repeat(3,1fr)}.industry-radar{height:210px}.page-header{padding:5rem 0 3.5rem}.page-header h1{font-size:clamp(2.7rem,10vw,4.3rem)}.page-header p{font-size:1rem}.service-detail-grid{grid-template-columns:1fr;padding-block:4rem}.service-number{order:-1}.tech-list{grid-column:1}.final-cta,.industry-cta{display:block}.cta-options{margin-top:1.5rem}.cta-options .btn{width:100%}.footer-grid{grid-template-columns:1fr 1fr;gap:2rem}.footer-grid>div:first-child{grid-column:span 2}.footer-bottom{display:block}.footer-bottom>*{display:block;margin-bottom:.6rem}}
 @media(max-width:520px){.nav-actions>.btn{display:none}.brand small{font-size:.47rem}.brand img{width:27px;height:27px}.hero-visual{min-height:275px}.hero .code-card{width:82%;padding:1.25rem}.hero .code-card strong{font-size:1.55rem}.hero .metric-row{padding:.55rem 0;font-size:.7rem}.float-card{font-size:.7rem;padding:.6rem .7rem}.float-one{top:3%;right:-2%}.float-two{bottom:3%;left:-2%}.section{padding:4rem 0}.workflow{grid-template-columns:1fr 1fr}.workflow-step{min-height:115px}.workflow-step i{display:none}.rating-strip{align-items:flex-start}.rating-strip strong{font-size:2.4rem}.blog-card{grid-template-columns:1fr}.blog-card img{height:160px}.footer-grid{grid-template-columns:1fr}.footer-grid>div:first-child{grid-column:auto}.social-row{display:grid;grid-template-columns:1fr 1fr}.social-row span{grid-column:span 2}.social-row a{margin:0}}
 
-.brand-wordmark{display:block; line-height:0; flex:none;}
-.brand-wordmark img{display:block; width:265px !important; height:auto !important; max-width:none; object-fit:contain;}
-footer .brand-wordmark img{width:290px !important;}
+.brand-lockup{display:flex; align-items:center; gap:.75rem; flex:none;}
+.brand-lockup img{display:block; width:46px !important; height:46px !important; max-width:none; object-fit:contain;}
+.brand-copy{display:flex; flex-direction:column; gap:.18rem; white-space:nowrap;}
+.brand-copy strong{font:700 1.35rem/1 "Space Grotesk",sans-serif; letter-spacing:-.03em; color:var(--ink);}
+.brand-copy .brand-t{color:var(--mint);}
+.brand-copy small{display:block; color:var(--muted); font:600 .62rem/1.1 "JetBrains Mono",monospace; letter-spacing:.16em; text-transform:uppercase;}
+footer .brand-lockup img{width:50px !important; height:50px !important;}
+footer .brand-copy strong{color:#fff;}
+footer .brand-copy small{color:#b6c4d5;}
 .nav-inner{min-height:88px;}
 @media(max-width:960px){.nav-inner{min-height:80px;}}
-@media(max-width:760px){.brand-wordmark img{width:220px !important;} footer .brand-wordmark img{width:250px !important;}}
-@media(max-width:520px){.brand-wordmark img{width:190px !important;} footer .brand-wordmark img{width:225px !important;}}
+@media(max-width:760px){.brand-lockup{gap:.55rem;}.brand-lockup img{width:40px !important; height:40px !important;}.brand-copy strong{font-size:1.15rem;}.brand-copy small{font-size:.54rem;}}
+@media(max-width:520px){.brand-lockup{gap:.45rem;}.brand-lockup img{width:36px !important; height:36px !important;}.brand-copy strong{font-size:1.05rem;}.brand-copy small{font-size:.48rem; letter-spacing:.11em;}footer .brand-lockup img{width:42px !important; height:42px !important;}}
