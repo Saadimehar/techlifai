@@ -24,4 +24,7 @@ export const IconClose = (p) => <Icon {...p}><line x1="6" y1="6" x2="18" y2="18"
 export const IconTwitter = (p) => <Icon {...p}><path d="M22 5.9c-.7.3-1.5.6-2.3.7.8-.5 1.4-1.3 1.7-2.3-.8.5-1.7.8-2.6 1a4.1 4.1 0 0 0-7 3.7A11.6 11.6 0 0 1 3.4 4.6a4.1 4.1 0 0 0 1.3 5.5c-.7 0-1.3-.2-1.9-.5v.1c0 2 1.4 3.6 3.3 4a4.1 4.1 0 0 1-1.9.1 4.1 4.1 0 0 0 3.8 2.8A8.2 8.2 0 0 1 2 18.4a11.6 11.6 0 0 0 6.3 1.8c7.5 0 11.7-6.3 11.7-11.7v-.5c.8-.6 1.5-1.3 2-2.1z" /></Icon>;
 export const IconLinkedin = (p) => <Icon {...p}><rect x="3" y="3" width="18" height="18" rx="3" /><line x1="8" y1="10" x2="8" y2="16" /><circle cx="8" cy="7" r="0.5" fill="currentColor" /><path d="M12 16v-3.5a2 2 0 0 1 4 0V16" /><line x1="12" y1="10" x2="12" y2="16" /></Icon>;
 export const IconInsta = (p) => <Icon {...p}><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" /></Icon>;
+export const IconFacebook = (p) => <Icon {...p}><path d="M14 21v-8h2.7l.4-3H14V8.1c0-.9.3-1.6 1.7-1.6h1.7V3.8c-.3 0-1.4-.1-2.6-.1-2.6 0-4.3 1.6-4.3 4.4V10H8v3h2.5v8" /></Icon>;
+export const IconX = (p) => <Icon {...p}><path d="M5 4l14 16M19 4L5 20" /></Icon>;
+export const IconTikTok = (p) => <Icon {...p}><path d="M14 4v10.5a3.5 3.5 0 1 1-3-3.46" /><path d="M14 4c.5 2.4 2 3.8 4.5 4" /></Icon>;
 export const IconDribbble = (p) => <Icon {...p}><circle cx="12" cy="12" r="9" /><path d="M3.5 9.5c3 1 12 1 17 0M6 19c2-5 5-13 6-17M18 19c-2-5-9-9-15-8" /></Icon>;

@@ -3,7 +3,15 @@ import emailjs from '@emailjs/browser';
 import { Helmet } from 'react-helmet-async';
 import { Button, PageHeader, Section } from '../components/Site.jsx';
 import { CONTACT_EMAIL, CONTACT_PHONE, COMPANY_ADDRESS, EMAILJS, SERVICES, SOCIAL_LINKS } from '../data.js';
-import { IconAI, IconArrow, IconMail, IconPhone, IconPin } from '../icons.jsx';
+import { IconAI, IconArrow, IconFacebook, IconInsta, IconLinkedin, IconMail, IconPhone, IconPin, IconTikTok, IconX } from '../icons.jsx';
+
+const SOCIAL_ITEMS = [
+  ['LinkedIn', IconLinkedin],
+  ['Instagram', IconInsta],
+  ['Facebook', IconFacebook],
+  ['X', IconX],
+  ['TikTok', IconTikTok],
+];
 
 export default function EmailContact() {
   const [form, setForm] = useState({ name: '', email: '', service: 'Web Development', customService: '', budget: '', message: '' });
@@ -101,7 +109,7 @@ export default function EmailContact() {
                     </div>
                   </div>
                 </label>
-                <label>Budget<input type="text" value={form.budget} onChange={update('budget')} placeholder="€ / $  e.g. 5,000 - 10,000" /></label>
+                <label>Budget<input type="text" value={form.budget} onChange={update('budget')} placeholder="€ / $  e.g. 2,000 - 10,000" /></label>
               </div>
               {form.service === 'Other / custom service' && <label>What service do you need?<input required value={form.customService} onChange={update('customService')} placeholder="Describe your service" /></label>}
               <label>Project details<textarea required value={form.message} onChange={update('message')} placeholder="What are you trying to achieve?" /></label>
@@ -112,7 +120,10 @@ export default function EmailContact() {
         </div>
       </Section>
       <Section className="grey">
-        <div className="social-row"><span>Find us online</span>{Object.entries(SOCIAL_LINKS).map(([name, url]) => <a key={name} href={url} target="_blank" rel="noreferrer">{name}</a>)}</div>
+        <div className="contact-social-panel">
+          <div className="contact-social-copy"><span className="eyebrow">STAY CONNECTED</span><h2>Find us online.</h2><p>Follow Techlifai for practical ideas, new launches and digital growth notes.</p></div>
+          <div className="contact-social-grid">{SOCIAL_ITEMS.map(([name, SocialIcon]) => <a className="contact-social-link" key={name} href={SOCIAL_LINKS[name]} target="_blank" rel="noreferrer" aria-label={`Follow Techlifai on ${name}`}><span className="contact-social-icon"><SocialIcon width="20" height="20" /></span><span>{name}</span><IconArrow width="14" height="14" /></a>)}</div>
+        </div>
       </Section>
     </>
   );

@@ -1,8 +1,16 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { Layout } from './components/Site.jsx';
-import { Home, About, Services, Industries, Projects, Blog, BlogPost, Team, Reviews, Contact } from './pages/Pages.jsx';
-import EmailContact from './pages/EmailContact.jsx';
+import Home from './pages/Home.jsx';
+import About from './pages/About.jsx';
+import Services from './pages/Services.jsx';
+import Industries from './pages/Industries.jsx';
+import Projects from './pages/Projects.jsx';
+import Blog from './pages/Blog.jsx';
+import BlogPost from './pages/BlogPost.jsx';
+import Team from './pages/Team.jsx';
+import Reviews from './pages/Reviews.jsx';
+import Contact from './pages/Contact.jsx';
 
 export default function App() {
   const basename = window.location.pathname === '/techlifai' || window.location.pathname.startsWith('/techlifai/') ? '/techlifai' : undefined;
