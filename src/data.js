@@ -9,7 +9,7 @@ const getImage = (fileName) => IMAGE_ASSETS[`./images/${fileName}`];
 
 
 export const CONTACT_EMAIL = 'techlifai@gmail.com';
-export const CONTACT_PHONE = '+49 30 1234 5678';
+export const CONTACT_PHONE = '+49 175 9538961';
 export const COMPANY_ADDRESS = 'Berlin, Germany';
 export const EMAILJS = {
   SERVICE_ID: 'service_techlifai',
@@ -17,7 +17,7 @@ export const EMAILJS = {
   PUBLIC_KEY: 'xPB2wRXh8nJMbvOBI',
 };
 export const SOCIAL_LINKS = {
-  LinkedIn: 'https://www.linkedin.com/',
+  LinkedIn: 'https://www.linkedin.com/company/techlifai/',
   Instagram: 'https://www.instagram.com/',
   Facebook: 'https://www.facebook.com/',
   X: 'https://x.com/',
