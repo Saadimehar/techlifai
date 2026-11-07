@@ -1,8 +1,76 @@
-import { SERVICES } from '../data.js';
-import { Button, PageHeader, Section } from '../components/Site.jsx';
-import { IconArrow } from '../icons.jsx';
-import { Meta, serviceIcon } from './pageHelpers.jsx';
+import { SERVICES } from "../data.js";
+import { Button, PageHeader, Section } from "../components/Site.jsx";
+import { IconArrow } from "../icons.jsx";
+import { Meta, serviceIcon } from "./pageHelpers.jsx";
 
 export default function Services() {
-	return <><Meta title="Services" description="Web, commerce, app, SEO and AI automation services from Techlifai." /><PageHeader eyebrow="SERVICES / CAPABILITIES" title="One senior team for every digital growth challenge." intro="From the first strategic question to the final QA pass, we combine specialist craft with a clear path to measurable outcomes." /><Section className="service-overview"><div className="overview-panel"><div><span className="eyebrow">HOW WE HELP</span><h2>Strategy that turns into something useful.</h2><p>Choose one focused service or bring us a bigger challenge. We shape the right delivery team around your goals, audience and timeline.</p></div><div className="overview-metrics"><div><b>09</b><span>specialist services</span></div><div><b>40+</b><span>projects delivered</span></div><div><b>98%</b><span>client retention</span></div></div></div></Section><div className="service-detail-list">{SERVICES.map((service, index) => <section id={service.title.toLowerCase().replaceAll(' ', '-')} className={`service-detail ${index % 2 ? 'grey' : ''}`} key={service.title}><div className="container service-detail-grid"><div className="service-number mono">0{index + 1}</div><div><div className="icon-box">{serviceIcon(service)}</div><span className="tag">{service.tag}</span><h2>{service.title}</h2><p className="lead">{service.desc}</p><div className="deliverables"><span>WHAT YOU GET</span><p>Strategy, production, QA, launch support and a clear handover for your team.</p></div><Button to="/contact">Talk about {service.title} <IconArrow width="15" /></Button></div></div></section>)}</div></>;
+  return (
+    <>
+      <Meta
+        title="Services"
+        description="Web, commerce, app, SEO and AI automation services from Techlifai."
+      />
+      <PageHeader
+        eyebrow="SERVICES / CAPABILITIES"
+        title="One senior team for every digital growth challenge."
+        intro="From the first strategic question to the final QA pass, we combine specialist craft with a clear path to measurable outcomes."
+      />
+      <Section className="service-overview">
+        <div className="overview-panel">
+          <div>
+            <span className="eyebrow">HOW WE HELP</span>
+            <h2>Strategy that turns into something useful.</h2>
+            <p>
+              Choose one focused service or bring us a bigger challenge. We
+              shape the right delivery team around your goals, audience and
+              timeline.
+            </p>
+          </div>
+          <div className="overview-metrics">
+            <div>
+              <b>09</b>
+              <span>specialist services</span>
+            </div>
+            <div>
+              <b>40+</b>
+              <span>projects delivered</span>
+            </div>
+            <div>
+              <b>98%</b>
+              <span>client retention</span>
+            </div>
+          </div>
+        </div>
+      </Section>
+      <div className="service-detail-list">
+        {SERVICES.map((service, index) => (
+          <section
+            id={service.title.toLowerCase().replaceAll(" ", "-")}
+            className={`service-detail ${index % 2 ? "grey" : ""}`}
+            key={service.title}
+          >
+            <div className="container service-detail-grid">
+              <div className="service-number mono">0{index + 1}</div>
+              <div>
+                <div className="icon-box">{serviceIcon(service)}</div>
+                <span className="tag">{service.tag}</span>
+                <h2>{service.title}</h2>
+                <p className="lead">{service.desc}</p>
+                <div className="deliverables">
+                  <span>WHAT YOU GET</span>
+                  <p>
+                    Strategy, production, QA, launch support and a clear
+                    handover for your team.
+                  </p>
+                </div>
+                <Button to="/contact">
+                  Talk about {service.title} <IconArrow width="15" />
+                </Button>
+              </div>
+            </div>
+          </section>
+        ))}
+      </div>
+    </>
+  );
 }
