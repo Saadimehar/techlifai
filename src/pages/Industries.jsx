@@ -21,32 +21,47 @@ export default function Industries() {
         title="Experience that meets people where they are."
         intro="Explore the industries where our team creates the most leverage."
       >
-        <div className="industry-page-grid">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {INDUSTRIES.map((industry, index) => {
             const Icon = industry.icon;
+            const slug = industry.title
+              .toLowerCase()
+              .replaceAll(" ", "-")
+              .replaceAll("&", "and")
+              .replaceAll("---", "-");
             return (
               <Reveal
                 key={industry.title}
-                className="industry-page-card"
+                className="rounded-2xl border border-line bg-white p-6 shadow-card transition duration-250 hover:-translate-y-1.5 hover:border-[#b9ddcf] hover:shadow-[0_18px_35px_rgba(11,31,58,0.12)]"
                 delay={index * 0.03}
               >
-                <div className="industry-card-top">
-                  <div className="icon-box">
+                <div id={slug} className="flex items-center justify-between">
+                  <div className="grid h-[46px] w-[46px] place-items-center rounded-xl bg-[#e5faf3] text-mint">
                     <Icon width="23" />
                   </div>
-                  <span className="mono">0{index + 1}</span>
+                  <span className="mono-label text-mint">0{index + 1}</span>
                 </div>
-                <h2>{industry.title}</h2>
-                <p>
+                <h2 className="mt-5 mb-3 text-[1.35rem] font-bold text-ink">
+                  {industry.title}
+                </h2>
+                <p className="mb-0 text-[0.9rem] text-muted">
                   Build trust, simplify decisions and create a digital
                   experience that fits how your customers choose.
                 </p>
-                <ul>
+                <ul className="my-4 list-none border-t border-line p-0">
                   {industry.items.map((item) => (
-                    <li key={item}>{item}</li>
+                    <li
+                      key={item}
+                      className="border-b border-line py-2 text-[0.78rem] text-muted"
+                    >
+                      {item}
+                    </li>
                   ))}
                 </ul>
-                <Link to="/contact">
+                <Link
+                  to="/contact"
+                  className="flex items-center gap-1.5 text-[0.78rem] font-semibold text-mint"
+                >
                   Talk about your industry <IconArrow width="14" />
                 </Link>
               </Reveal>

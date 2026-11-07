@@ -9,6 +9,7 @@ export default function Projects() {
     filter === "All"
       ? PROJECTS
       : PROJECTS.filter((project) => project.cat === filter);
+
   return (
     <>
       <Meta
@@ -21,21 +22,25 @@ export default function Projects() {
         intro="Explore real client projects across web, commerce, apps, SEO and AI automation."
       />
       <Section>
-        <div className="filter-row">
+        <div className="mb-8 flex flex-wrap gap-2">
           {PROJECT_CATS.filter(
             (category) =>
               !["Digital Marketing", "Video Editing"].includes(category),
           ).map((category) => (
             <button
               key={category}
-              className={filter === category ? "active" : ""}
+              className={`rounded-full border px-3.5 py-2 text-[0.8rem] transition-colors ${
+                filter === category
+                  ? "border-ink bg-ink text-white"
+                  : "border-line bg-white text-muted hover:border-ink hover:bg-ink hover:text-white"
+              }`}
               onClick={() => setFilter(category)}
             >
               {category}
             </button>
           ))}
         </div>
-        <div className="project-grid">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           {visible.map((project) => (
             <ProjectCard key={project.title} project={project} />
           ))}
