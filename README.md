@@ -1,4 +1,4 @@
-# Techlifai: Digital Growth Studio
+# Techlifai: Digital Studio
 
 A one-page, animated agency website built with React + Vite.
 
