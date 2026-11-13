@@ -137,12 +137,16 @@ function Header() {
               key={link.to}
               to={link.to}
               className={({ isActive }) =>
-                `rounded-full px-3.5 py-2 text-[0.88rem] transition-colors ${
+                `px-3.5 py-2 text-[0.88rem] transition-colors duration-300 ${
                   isActive ? "text-ink" : "text-muted hover:text-ink"
                 }`
               }
             >
-              {link.label}
+              {({ isActive }) => (
+                <span className={`link-u ${isActive ? "link-u-active" : ""}`}>
+                  {link.label}
+                </span>
+              )}
             </NavLink>
           ))}
         </nav>
@@ -151,7 +155,8 @@ function Header() {
           <ThemeToggle />
           <Button
             to="/contact"
-            className="hidden !px-5 !py-2.5 !text-[0.85rem] sm:inline-flex"
+            className="!px-5 !py-2.5 !text-[0.85rem]"
+            wrapperClassName="max-sm:hidden"
           >
             Start a project
           </Button>
@@ -235,7 +240,7 @@ function LocalTime() {
         new Intl.DateTimeFormat("en-GB", {
           hour: "2-digit",
           minute: "2-digit",
-          timeZone: "Europe/Berlin",
+          timeZone: "Asia/Karachi",
         }).format(new Date()),
       );
     tick();
@@ -245,70 +250,65 @@ function LocalTime() {
   return (
     <span className="mono-label inline-flex items-center gap-2 text-muted">
       <i className="pulse-dot h-1.5 w-1.5 rounded-full bg-mint" />
-      Berlin {time}
+      Islamabad {time}
     </span>
   );
 }
 
-export function Footer() {
-  const col = "grid content-start gap-3";
-  const link =
-    "text-[0.92rem] text-muted transition-colors hover:text-ink w-fit";
-  return (
-    <footer className="overflow-hidden border-t border-line pt-20 md:pt-28">
-      <div className="container-site">
-        <div className="flex flex-col justify-between gap-10 md:flex-row md:items-end">
-          <h2 className="max-w-[780px] text-[clamp(2.4rem,7vw,6rem)] font-medium">
-            Have an idea?
-            <br />
-            <span className="text-muted">Let's build it.</span>
-          </h2>
-          <Button to="/contact" variant="glow" className="self-start md:self-auto">
-            Start a project <IconArrow width="15" />
-          </Button>
-        </div>
+const FOOTER_LINKS = [
+  ["Work", "/projects"],
+  ["Services", "/services"],
+  ["About", "/about"],
+  ["Blog", "/blog"],
+  ["Contact", "/contact"],
+];
 
-        <div className="mt-20 grid grid-cols-2 gap-10 border-t border-line pt-10 md:grid-cols-4">
-          <div className={col}>
-            <span className="mono-label text-muted">Studio</span>
-            <Link to="/about" className={link}>About</Link>
-            <Link to="/team" className={link}>Team</Link>
-            <Link to="/reviews" className={link}>Reviews</Link>
-            <Link to="/blog" className={link}>Blog</Link>
-          </div>
-          <div className={col}>
-            <span className="mono-label text-muted">Work</span>
-            <Link to="/projects" className={link}>Projects</Link>
-            <Link to="/services" className={link}>Services</Link>
-            <Link to="/industries" className={link}>Industries</Link>
-          </div>
-          <div className={col}>
-            <span className="mono-label text-muted">Social</span>
-            {Object.entries(SOCIAL_LINKS).map(([name, url]) => (
-              <a key={name} href={url} target="_blank" rel="noreferrer" className={link}>
-                {name}
+export function Footer() {
+  return (
+    <footer className="border-t border-line pt-20 md:pt-28">
+      <div className="container-site">
+        <span className="eyebrow">Next project</span>
+        <a
+          href={`mailto:${CONTACT_EMAIL}`}
+          className="group block w-fit max-w-full text-[clamp(1.7rem,6.4vw,5.6rem)] leading-[1.05] font-medium tracking-[-0.045em] break-all md:break-normal"
+        >
+          <span className="link-u">{CONTACT_EMAIL}</span>
+          <IconArrow
+            className="ml-3 inline-block h-[0.6em] w-[0.6em] text-mint transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-1 group-hover:translate-x-1"
+          />
+        </a>
+
+        <div className="mt-20 flex flex-col gap-8 border-t border-line py-8 md:flex-row md:items-center md:justify-between">
+          <nav aria-label="Footer" className="flex flex-wrap gap-x-7 gap-y-3">
+            {FOOTER_LINKS.map(([label, to]) => (
+              <Link
+                key={to}
+                to={to}
+                className="text-[0.92rem] text-muted transition-colors duration-300 hover:text-ink"
+              >
+                <span className="link-u">{label}</span>
+              </Link>
+            ))}
+          </nav>
+          <div className="flex flex-wrap gap-x-6 gap-y-3">
+            {["LinkedIn", "Instagram", "X"].map((name) => (
+              <a
+                key={name}
+                href={SOCIAL_LINKS[name]}
+                target="_blank"
+                rel="noreferrer"
+                className="text-[0.92rem] text-muted transition-colors duration-300 hover:text-ink"
+              >
+                <span className="link-u">{name}</span>
               </a>
             ))}
           </div>
-          <div className={col}>
-            <span className="mono-label text-muted">Contact</span>
-            <a href={`mailto:${CONTACT_EMAIL}`} className={`${link} break-all`}>
-              {CONTACT_EMAIL}
-            </a>
-            <LocalTime />
-          </div>
         </div>
-      </div>
 
-      <div
-        aria-hidden="true"
-        className="mt-16 select-none text-center font-display text-[clamp(4rem,21vw,19rem)] leading-[0.8] font-semibold tracking-[-0.06em] text-soft"
-      >
-        techlifai
-      </div>
-      <div className="container-site flex justify-between border-t border-line py-6 text-[0.78rem] text-muted">
-        <span>© {new Date().getFullYear()} Techlifai</span>
-        <span>Berlin, Germany</span>
+        <div className="flex flex-col justify-between gap-3 border-t border-line py-6 text-[0.78rem] text-muted sm:flex-row sm:items-center">
+          <span>© {new Date().getFullYear()} Techlifai</span>
+          <LocalTime />
+        </div>
       </div>
     </footer>
   );

@@ -236,7 +236,7 @@ export default function EmailContact() {
                     type="text"
                     value={form.budget}
                     onChange={update("budget")}
-                    placeholder="€ / $  e.g. 2,000 - 10,000"
+                    placeholder="$ / PKR, e.g. 2,000 - 10,000"
                     className={INPUT_CLASSES}
                   />
                 </label>
