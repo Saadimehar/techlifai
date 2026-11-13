@@ -128,8 +128,9 @@ function Header() {
   }, [open]);
 
   return (
+    <>
     <header
-      className={`fixed inset-x-0 top-0 z-40 transition-all duration-500 ${
+      className={`fixed inset-x-0 top-0 z-[45] transition-all duration-500 ${
         scrolled || open
           ? "border-b border-line bg-paper/80 backdrop-blur-xl"
           : "border-b border-transparent"
@@ -189,6 +190,7 @@ function Header() {
         </div>
       </div>
 
+    </header>
       <AnimatePresence>
         {open && (
           <m.nav
@@ -235,7 +237,7 @@ function Header() {
           </m.nav>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 }
 
