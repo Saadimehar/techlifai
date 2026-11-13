@@ -132,6 +132,28 @@
   }
 }
 
+.link-u {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  background-size: 0% 1px;
+  padding-bottom: 2px;
+  transition: background-size 0.6s var(--ease-out-expo);
+}
+
+a:hover > .link-u,
+button:hover > .link-u,
+.link-u:hover,
+.group:hover .link-u {
+  background-position: 0% 100%;
+  background-size: 100% 1px;
+}
+
+.link-u-active {
+  background-position: 0% 100%;
+  background-size: 100% 1px;
+}
+
 @keyframes marquee {
   to {
     transform: translateX(-50%);
