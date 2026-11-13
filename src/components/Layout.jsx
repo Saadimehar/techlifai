@@ -6,7 +6,8 @@ import {
   useScroll,
   useSpring,
 } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Lenis from "lenis";
 import { CONTACT_EMAIL, SOCIAL_LINKS } from "../data.js";
 import { useTheme } from "../lib/theme.js";
 import {
@@ -102,6 +103,33 @@ function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { pathname } = useLocation();
+  const menuRef = useRef(null);
+  const menuContentRef = useRef(null);
+
+  useEffect(() => {
+    if (!open) return;
+    let lenis;
+    let frame;
+    const timer = setTimeout(() => {
+      if (!menuRef.current) return;
+      lenis = new Lenis({
+        wrapper: menuRef.current,
+        content: menuContentRef.current,
+        lerp: 0.09,
+        syncTouch: false,
+      });
+      const raf = (time) => {
+        lenis.raf(time);
+        frame = requestAnimationFrame(raf);
+      };
+      frame = requestAnimationFrame(raf);
+    }, 0);
+    return () => {
+      clearTimeout(timer);
+      cancelAnimationFrame(frame);
+      lenis?.destroy();
+    };
+  }, [open]);
 
   useEffect(() => setOpen(false), [pathname]);
 
@@ -196,12 +224,17 @@ function Header() {
           <m.nav
             aria-label="Mobile"
             data-lenis-prevent
+            ref={menuRef}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-40 flex flex-col justify-between overflow-y-auto overscroll-contain bg-paper px-6 pt-28 pb-8 lg:hidden"
+            className="fixed inset-0 z-40 overflow-y-auto overscroll-contain bg-paper lg:hidden"
           >
+            <div
+              ref={menuContentRef}
+              className="flex min-h-full flex-col justify-between px-6 pt-28 pb-8"
+            >
             <ul className="m-0 list-none p-0">
               {[...LINKS, { label: "Contact", to: "/contact" }].map(
                 (link, i) => (
@@ -235,6 +268,7 @@ function Header() {
             >
               {CONTACT_EMAIL}
             </a>
+            </div>
           </m.nav>
         )}
       </AnimatePresence>
