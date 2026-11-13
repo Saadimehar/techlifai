@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { SERVICES, PROJECTS } from "../data.js";
 import { ArrowLink, Button, Reveal, Section } from "../components/Site.jsx";
 import { IconArrow } from "../icons.jsx";
@@ -61,7 +61,7 @@ function Hero() {
       />
 
       <div className="container-site relative">
-        <motion.span
+        <m.span
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -69,12 +69,12 @@ function Hero() {
         >
           <i className="pulse-dot h-1.5 w-1.5 rounded-full bg-mint" />
           Booking new projects
-        </motion.span>
+        </m.span>
 
         <h1 className="max-w-[1100px] text-[clamp(2.9rem,9.6vw,9rem)] font-medium">
           {["We design and build", "digital"].map((line, i) => (
             <span key={line} className="block overflow-hidden pb-[0.08em]">
-              <motion.span
+              <m.span
                 className="block"
                 initial={{ y: "110%" }}
                 animate={{ y: 0 }}
@@ -88,7 +88,7 @@ function Hero() {
                 {i === 1 && (
                   <span className="relative ml-[0.22em] inline-block overflow-hidden align-bottom text-mint">
                     <AnimatePresence mode="wait" initial={false}>
-                      <motion.span
+                      <m.span
                         key={word}
                         className="block"
                         initial={{ y: "100%" }}
@@ -97,16 +97,16 @@ function Hero() {
                         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                       >
                         {WORDS[word]}
-                      </motion.span>
+                      </m.span>
                     </AnimatePresence>
                   </span>
                 )}
-              </motion.span>
+              </m.span>
             </span>
           ))}
         </h1>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
@@ -123,7 +123,7 @@ function Hero() {
               See work
             </Button>
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

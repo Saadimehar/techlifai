@@ -1,5 +1,5 @@
 import { NavLink, Link, useLocation } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { useEffect, useState } from "react";
 import { CONTACT_EMAIL, SOCIAL_LINKS } from "../data.js";
 import { useTheme } from "../lib/theme.js";
@@ -179,7 +179,7 @@ function Header() {
 
       <AnimatePresence>
         {open && (
-          <motion.nav
+          <m.nav
             aria-label="Mobile"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -190,7 +190,7 @@ function Header() {
             <ul className="m-0 list-none p-0">
               {[...LINKS, { label: "Contact", to: "/contact" }].map(
                 (link, i) => (
-                  <motion.li
+                  <m.li
                     key={link.to}
                     initial={{ opacity: 0, y: 24 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -210,7 +210,7 @@ function Header() {
                         0{i + 1}
                       </span>
                     </Link>
-                  </motion.li>
+                  </m.li>
                 ),
               )}
             </ul>
@@ -220,7 +220,7 @@ function Header() {
             >
               {CONTACT_EMAIL}
             </a>
-          </motion.nav>
+          </m.nav>
         )}
       </AnimatePresence>
     </header>
@@ -328,7 +328,7 @@ export function Layout({ children }) {
       <Header />
       <ScrollManager />
       <AnimatePresence mode="wait">
-        <motion.main
+        <m.main
           id="main"
           key={pathname}
           initial={{ opacity: 0 }}
@@ -337,7 +337,7 @@ export function Layout({ children }) {
           transition={{ duration: 0.25 }}
         >
           {children}
-        </motion.main>
+        </m.main>
       </AnimatePresence>
       <Footer />
     </>

@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
+import { LazyMotion, domAnimation } from "framer-motion";
 import { Layout } from "./components/Layout.jsx";
 import Home from "./pages/Home.jsx";
 
@@ -22,6 +23,7 @@ export default function App() {
       : undefined;
   return (
     <HelmetProvider>
+      <LazyMotion features={domAnimation}>
       <BrowserRouter basename={basename}>
         <Layout>
           <Suspense fallback={<div className="min-h-[100svh]" />}>
@@ -40,6 +42,7 @@ export default function App() {
           </Suspense>
         </Layout>
       </BrowserRouter>
+      </LazyMotion>
     </HelmetProvider>
   );
 }

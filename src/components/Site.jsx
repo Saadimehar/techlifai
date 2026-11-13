@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 import { IconArrow } from "../icons.jsx";
 
 const BUTTON_VARIANTS = {
@@ -38,7 +38,7 @@ export function Button({
 }
 
 export function Reveal({ children, className = "", delay = 0, as = "div" }) {
-  const Tag = motion[as] || motion.div;
+  const Tag = m[as] || m.div;
   const reduce = useReducedMotion();
   return (
     <Tag
