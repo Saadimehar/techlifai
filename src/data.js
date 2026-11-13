@@ -13,10 +13,10 @@ import {
 
 const IMAGE_ASSETS = import.meta.glob(
   [
-    "./images/haseebasmr.png",
-    "./images/zahoor.png",
-    "./images/codehub.png",
-    "./images/redline.png",
+    "./images/haseebasmr.webp",
+    "./images/zahoor.webp",
+    "./images/codehub.webp",
+    "./images/redline.webp",
     "./images/crypto.jpg",
     "./images/ai.jpg",
     "./images/ww.jpg",
@@ -218,7 +218,7 @@ export const PROJECTS = [
     tag: "Coding Website",
     title: "Haseeb ASMR",
     desc: "A focused coding and content website with a clear creator-led experience and responsive front-end presentation.",
-    image: getImage("haseebasmr.png"),
+    image: getImage("haseebasmr.webp"),
     link: "https://haseebasmr.com",
   },
   {
@@ -226,7 +226,7 @@ export const PROJECTS = [
     tag: "Coding Website",
     title: "Zahoor Perfumes",
     desc: "A polished product-led website combining premium visual design, product discovery and a smooth mobile experience.",
-    image: getImage("zahoor.png"),
+    image: getImage("zahoor.webp"),
     link: "https://zahoorperfumes.netlify.app/",
   },
   {
@@ -234,7 +234,7 @@ export const PROJECTS = [
     tag: "Coding Website",
     title: "CodeHub",
     desc: "A modern coding platform website built around clear information architecture, approachable content and speed.",
-    image: getImage("codehub.png"),
+    image: getImage("codehub.webp"),
     link: "https://codehubfyp.netlify.app/",
   },
   {
@@ -242,7 +242,7 @@ export const PROJECTS = [
     tag: "Coding Website",
     title: "Redline",
     desc: "A sharp, responsive coding website with a focused visual system, clear content structure and fast front-end experience.",
-    image: getImage("redline.png"),
+    image: getImage("redline.webp"),
     link: "https://redline.sanaullah.app/",
   },
   {
