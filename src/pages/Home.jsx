@@ -53,7 +53,7 @@ export default function Home() {
             <div className="pointer-events-none absolute inset-[5%] bg-[linear-gradient(rgba(0,179,134,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(0,179,134,0.1)_1px,transparent_1px)] bg-[size:35px_35px] [mask-image:radial-gradient(circle,#000,transparent_70%)]" />
             <div className="pointer-events-none absolute h-[380px] w-[380px] rounded-full bg-[radial-gradient(circle,rgba(0,230,168,0.26),transparent_66%)] blur-[10px]" />
 
-            <div className="relative z-10 w-[min(320px,80%)] -rotate-4 rounded-3xl border border-line bg-white/92 p-5 shadow-card sm:p-6 lg:p-7">
+            <div className="relative z-10 w-[min(320px,80%)] -rotate-4 rounded-3xl border border-line bg-paper/90 p-5 shadow-card sm:p-6 lg:p-7">
               <span className="mono-label text-ink">SYSTEM / ONLINE</span>
               <strong className="my-5 block font-display text-[1.55rem] leading-[1.05] font-semibold text-ink sm:my-6 sm:text-[1.9rem]">
                 Build smarter.
@@ -70,7 +70,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className=" absolute top-[4%] right-0 z-20 animate-float rounded-xl border border-line bg-white px-3 py-2 text-[0.72rem] font-semibold text-ink shadow-card sm:top-[8%] sm:right-[5%] sm:px-4 sm:py-3 sm:text-[0.82rem]">
+            <div className=" absolute top-[4%] right-0 z-20 animate-float rounded-xl border border-line bg-paper px-3 py-2 text-[0.72rem] font-semibold text-ink shadow-card sm:top-[8%] sm:right-[5%] sm:px-4 sm:py-3 sm:text-[0.82rem]">
               ✦ AI workflow
               <br />
               <small className="block font-normal text-muted">
@@ -78,7 +78,7 @@ export default function Home() {
               </small>
             </div>
 
-            <div className="absolute bottom-[4%] left-0 z-20 animate-float-reverse rounded-xl border border-line bg-white px-3 py-2 text-[0.72rem] font-semibold text-ink shadow-card sm:bottom-[8%] sm:px-4 sm:py-3 sm:text-[0.82rem]">
+            <div className="absolute bottom-[4%] left-0 z-20 animate-float-reverse rounded-xl border border-line bg-paper px-3 py-2 text-[0.72rem] font-semibold text-ink shadow-card sm:bottom-[8%] sm:px-4 sm:py-3 sm:text-[0.82rem]">
               ↑ 3.4x
               <br />
               <small className="block font-normal text-muted">
@@ -89,7 +89,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-line bg-white">
+      <section className="border-y border-line bg-paper">
         <div className="container-site grid grid-cols-2 gap-4 py-6 md:grid-cols-4 md:gap-0">
           {[
             ["40+", "Projects delivered"],
@@ -121,7 +121,7 @@ export default function Home() {
           {SERVICES.slice(0, 7).map((service, index) => (
             <Reveal key={service.title} delay={index * 0.04}>
               <Card className="min-h-[225px] transition duration-250 hover:-translate-y-1.5 hover:shadow-card-hover">
-                <div className="mb-5 grid h-[46px] w-[46px] place-items-center rounded-xl bg-[#e5faf3] text-mint">
+                <div className="mb-5 grid h-[46px] w-[46px] place-items-center rounded-xl bg-soft text-mint">
                   {serviceIcon(service)}
                 </div>
                 <h3 className="mb-3 text-[1.15rem] font-semibold text-ink">
@@ -189,7 +189,7 @@ export default function Home() {
           >
             {["Lead", "AI chatbot", "CRM", "Follow-up"].map((step, index) => (
               <div
-                className="relative flex min-h-[115px] flex-col justify-between rounded-[14px] border border-glow/34 bg-white/4 p-4 sm:min-h-[150px]"
+                className="relative flex min-h-[115px] flex-col justify-between rounded-[14px] border border-glow/34 bg-paper/4 p-4 sm:min-h-[150px]"
                 key={step}
               >
                 <span className="font-mono text-[0.7rem] text-[#7b8797]">

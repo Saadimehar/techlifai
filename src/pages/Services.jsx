@@ -67,7 +67,7 @@ export default function Services() {
                   0{index + 1}
                 </div>
                 <div>
-                  <div className="mb-5 inline-grid h-[46px] w-[46px] place-items-center rounded-xl bg-[#e5faf3] text-mint">
+                  <div className="mb-5 inline-grid h-[46px] w-[46px] place-items-center rounded-xl bg-soft text-mint">
                     {serviceIcon(service)}
                   </div>
                   <span className="mono-label block tracking-[0.06em] text-mint">

@@ -31,8 +31,8 @@ export default function Projects() {
               key={category}
               className={`rounded-full border px-3.5 py-2 text-[0.8rem] transition-colors ${
                 filter === category
-                  ? "border-ink bg-ink text-white"
-                  : "border-line bg-white text-muted hover:border-ink hover:bg-ink hover:text-white"
+                  ? "border-ink bg-ink text-paper"
+                  : "border-line bg-paper text-muted hover:border-ink hover:bg-ink hover:text-paper"
               }`}
               onClick={() => setFilter(category)}
             >

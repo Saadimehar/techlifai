@@ -32,7 +32,7 @@ const SOCIAL_ITEMS = [
 ];
 
 const INPUT_CLASSES =
-  "w-full rounded-[9px] border border-line bg-white px-3.5 py-3 text-ink outline-none placeholder:text-[#a7b5c3] focus:border-mint focus:ring-3 focus:ring-mint/10";
+  "w-full rounded-[9px] border border-line bg-paper px-3.5 py-3 text-ink outline-none placeholder:text-muted focus:border-mint focus:ring-3 focus:ring-mint/10";
 
 export default function EmailContact() {
   const [form, setForm] = useState({
@@ -118,8 +118,8 @@ export default function EmailContact() {
             <p className="mb-6 text-muted">
               Pick a time for a focused 30-minute conversation.
             </p>
-            <div className="rounded-2xl border border-dashed border-[#b5c6c2] bg-soft p-8">
-              <span className="grid h-[46px] w-[46px] place-items-center rounded-xl bg-[#e5faf3] text-mint">
+            <div className="rounded-2xl border border-dashed border-line bg-soft p-8">
+              <span className="grid h-[46px] w-[46px] place-items-center rounded-xl bg-soft text-mint">
                 <IconAI width="24" height="24" />
               </span>
               <h3 className="mt-6 mb-2 text-[1.15rem] font-semibold text-ink">
@@ -158,7 +158,7 @@ export default function EmailContact() {
 
           <div
             id="form"
-            className="rounded-2xl border border-line bg-white p-6 shadow-card sm:p-8"
+            className="rounded-2xl border border-line bg-paper p-6 shadow-card sm:p-8"
           >
             <h2 className="mb-6 text-[clamp(2rem,4vw,3.8rem)] font-bold text-ink">
               Send a message
@@ -194,7 +194,7 @@ export default function EmailContact() {
                   <div className="relative">
                     <button
                       type="button"
-                      className={`flex w-full items-center justify-between gap-3 rounded-[10px] border bg-white px-3.5 py-3 text-left text-[0.9rem] font-normal text-ink transition ${
+                      className={`flex w-full items-center justify-between gap-3 rounded-[10px] border bg-paper px-3.5 py-3 text-left text-[0.9rem] font-normal text-ink transition ${
                         serviceOpen
                           ? "border-mint ring-3 ring-mint/10"
                           : "border-line hover:border-mint hover:ring-3 hover:ring-mint/10"
@@ -213,7 +213,7 @@ export default function EmailContact() {
                     </button>
 
                     <div
-                      className={`absolute top-[calc(100%+8px)] right-0 left-0 z-20 rounded-xl border border-line bg-white p-2 shadow-dropdown transition-all duration-200 ${
+                      className={`absolute top-[calc(100%+8px)] right-0 left-0 z-20 rounded-xl border border-line bg-paper p-2 shadow-dropdown transition-all duration-200 ${
                         serviceOpen
                           ? "visible translate-y-0 opacity-100"
                           : "invisible translate-y-2 opacity-0"
@@ -224,8 +224,8 @@ export default function EmailContact() {
                           type="button"
                           className={`flex w-full rounded-lg px-3 py-2.5 text-left text-[0.86rem] font-normal transition-colors ${
                             form.service === option
-                              ? "bg-[#e5faf3] text-mint"
-                              : "bg-transparent text-ink hover:bg-[#e5faf3] hover:text-mint"
+                              ? "bg-soft text-mint"
+                              : "bg-transparent text-ink hover:bg-soft hover:text-mint"
                           }`}
                           key={option}
                           onClick={() => {
@@ -280,7 +280,7 @@ export default function EmailContact() {
               </label>
 
               <button
-                className="inline-flex items-center justify-center gap-2.5 rounded-full border border-transparent bg-mint px-[1.15rem] py-[0.82rem] font-semibold text-white transition duration-250 ease-out hover:-translate-y-0.5 hover:shadow-btn disabled:opacity-60"
+                className="inline-flex items-center justify-center gap-2.5 rounded-full border border-transparent bg-mint px-[1.15rem] py-[0.82rem] font-semibold text-on-accent transition duration-250 ease-out hover:-translate-y-0.5 hover:shadow-btn disabled:opacity-60"
                 type="submit"
                 disabled={sending}
               >
@@ -314,14 +314,14 @@ export default function EmailContact() {
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             {SOCIAL_ITEMS.map(([name, SocialIcon]) => (
               <a
-                className="flex items-center gap-3 rounded-[14px] border border-mint/18 bg-white/82 px-4 py-3.5 font-semibold text-ink transition duration-200 hover:-translate-y-1 hover:border-mint hover:shadow-[0_10px_24px_rgba(0,179,134,0.12)]"
+                className="flex items-center gap-3 rounded-[14px] border border-mint/18 bg-paper/80 px-4 py-3.5 font-semibold text-ink transition duration-200 hover:-translate-y-1 hover:border-mint "
                 key={name}
                 href={SOCIAL_LINKS[name]}
                 target="_blank"
                 rel="noreferrer"
                 aria-label={`Follow Techlifai on ${name}`}
               >
-                <span className="grid h-[34px] w-[34px] place-items-center rounded-[10px] bg-[#e5faf3] text-mint">
+                <span className="grid h-[34px] w-[34px] place-items-center rounded-[10px] bg-soft text-mint">
                   <SocialIcon width="20" height="20" />
                 </span>
                 <span>{name}</span>

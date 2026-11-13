@@ -12,8 +12,8 @@ export const Meta = ({ title, description }) => (
 
 export function ProjectCard({ project }) {
   return (
-    <Reveal className="overflow-hidden rounded-2xl border border-line bg-white transition duration-250 hover:-translate-y-1.5 hover:shadow-card-hover">
-      <div className="grid h-[190px] place-items-center overflow-hidden bg-linear-to-br from-[#dff5ed] to-soft text-mint">
+    <Reveal className="overflow-hidden rounded-2xl border border-line bg-paper transition duration-250 hover:-translate-y-1.5 hover:shadow-card-hover">
+      <div className="grid h-[190px] place-items-center overflow-hidden bg-linear-to-br from-soft to-line text-mint">
         {project.image ? (
           <img
             src={project.image}

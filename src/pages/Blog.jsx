@@ -20,7 +20,7 @@ export default function Blog() {
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
           {BLOG_POSTS.map((post) => (
             <Link
-              className="grid grid-cols-1 gap-4 rounded-2xl border border-line bg-white p-4 transition duration-250 hover:-translate-y-1.5 hover:shadow-card-hover sm:grid-cols-[180px_1fr] sm:gap-5"
+              className="grid grid-cols-1 gap-4 rounded-2xl border border-line bg-paper p-4 transition duration-250 hover:-translate-y-1.5 hover:shadow-card-hover sm:grid-cols-[180px_1fr] sm:gap-5"
               to={`/blog/${post.slug}`}
               key={post.slug}
             >

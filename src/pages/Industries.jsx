@@ -32,11 +32,11 @@ export default function Industries() {
             return (
               <Reveal
                 key={industry.title}
-                className="rounded-2xl border border-line bg-white p-6 shadow-card transition duration-250 hover:-translate-y-1.5 hover:border-[#b9ddcf] hover:shadow-[0_18px_35px_rgba(11,31,58,0.12)]"
+                className="rounded-2xl border border-line bg-paper p-6 shadow-card transition duration-250 hover:-translate-y-1.5 hover:border-mint hover:shadow-card-hover"
                 delay={index * 0.03}
               >
                 <div id={slug} className="flex items-center justify-between">
-                  <div className="grid h-[46px] w-[46px] place-items-center rounded-xl bg-[#e5faf3] text-mint">
+                  <div className="grid h-[46px] w-[46px] place-items-center rounded-xl bg-soft text-mint">
                     <Icon width="23" />
                   </div>
                   <span className="mono-label text-mint">0{index + 1}</span>

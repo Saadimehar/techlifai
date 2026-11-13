@@ -58,7 +58,7 @@ export default function Team() {
           {ROLE_CHIPS.map((role) => (
             <span
               key={role}
-              className="rounded-full border border-line bg-white px-4 py-2.5 text-[0.9rem] text-ink"
+              className="rounded-full border border-line bg-paper px-4 py-2.5 text-[0.9rem] text-ink"
             >
               {role}
             </span>
