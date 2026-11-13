@@ -1,5 +1,11 @@
 import { NavLink, Link, useLocation } from "react-router-dom";
-import { AnimatePresence, m } from "framer-motion";
+import {
+  AnimatePresence,
+  m,
+  useReducedMotion,
+  useScroll,
+  useSpring,
+} from "framer-motion";
 import { useEffect, useState } from "react";
 import { CONTACT_EMAIL, SOCIAL_LINKS } from "../data.js";
 import { useTheme } from "../lib/theme.js";
@@ -9,6 +15,7 @@ import {
   useSmoothScroll,
 } from "../lib/smoothScroll.js";
 import { Button } from "./Site.jsx";
+import PageTransition from "./PageTransition.jsx";
 import { IconArrow } from "../icons.jsx";
 
 const LINKS = [
@@ -21,7 +28,7 @@ const LINKS = [
 ];
 
 function ScrollManager() {
-  const { pathname, hash } = useLocation();
+  const { hash } = useLocation();
   useEffect(() => {
     if (hash) {
       const timer = setTimeout(
@@ -31,7 +38,7 @@ function ScrollManager() {
       return () => clearTimeout(timer);
     }
     scrollToTarget(0, { immediate: true });
-  }, [pathname, hash]);
+  }, [hash]);
   return null;
 }
 
@@ -315,31 +322,38 @@ export function Footer() {
 }
 
 export function Layout({ children }) {
-  const { pathname } = useLocation();
+  const location = useLocation();
+  const { pathname } = location;
+  const reduce = useReducedMotion();
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 28,
+    restDelta: 0.001,
+  });
   useSmoothScroll();
   return (
     <>
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:rounded-full focus:bg-mint focus:px-4 focus:py-2 focus:text-on-accent"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[70] focus:rounded-full focus:bg-mint focus:px-4 focus:py-2 focus:text-on-accent"
       >
         Skip to content
       </a>
+      <m.div
+        aria-hidden="true"
+        className="fixed inset-x-0 top-0 z-50 h-[2px] origin-left bg-mint"
+        style={{ scaleX: progress }}
+      />
       <Header />
-      <ScrollManager />
-      <AnimatePresence mode="wait">
-        <m.main
-          id="main"
-          key={pathname}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.25 }}
-        >
-          {children}
-        </m.main>
+      <AnimatePresence mode="wait" initial>
+        <m.div key={pathname}>
+          <ScrollManager />
+          {!reduce && <PageTransition pathname={pathname} />}
+          <main id="main">{children(location)}</main>
+          <Footer />
+        </m.div>
       </AnimatePresence>
-      <Footer />
     </>
   );
 }

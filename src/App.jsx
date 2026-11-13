@@ -13,6 +13,7 @@ const Blog = lazy(() => import("./pages/Blog.jsx"));
 const BlogPost = lazy(() => import("./pages/BlogPost.jsx"));
 const Team = lazy(() => import("./pages/Team.jsx"));
 const Reviews = lazy(() => import("./pages/Reviews.jsx"));
+const NotFound = lazy(() => import("./pages/NotFound.jsx"));
 const Contact = lazy(() => import("./pages/Contact.jsx"));
 
 export default function App() {
@@ -26,8 +27,9 @@ export default function App() {
       <LazyMotion features={domAnimation}>
       <BrowserRouter basename={basename}>
         <Layout>
+          {(location) => (
           <Suspense fallback={<div className="min-h-[100svh]" />}>
-            <Routes>
+            <Routes location={location}>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
@@ -38,8 +40,10 @@ export default function App() {
               <Route path="/team" element={<Team />} />
               <Route path="/reviews" element={<Reviews />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
+          )}
         </Layout>
       </BrowserRouter>
       </LazyMotion>
