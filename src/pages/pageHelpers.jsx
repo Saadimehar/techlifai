@@ -1,7 +1,5 @@
-import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { IconArrow } from "../icons.jsx";
-import { Reveal } from "../components/Site.jsx";
+import { ArrowLink, Reveal } from "../components/Site.jsx";
 
 export const Meta = ({ title, description }) => (
   <Helmet>
@@ -12,44 +10,31 @@ export const Meta = ({ title, description }) => (
 
 export function ProjectCard({ project }) {
   return (
-    <Reveal className="overflow-hidden rounded-2xl border border-line bg-paper transition duration-250 hover:-translate-y-1.5 hover:shadow-card-hover">
-      <div className="grid h-[190px] place-items-center overflow-hidden bg-linear-to-br from-soft to-line text-mint">
+    <Reveal className="group">
+      <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-soft">
         {project.image ? (
           <img
             src={project.image}
             alt={project.title}
-            className="h-full w-full object-cover"
+            loading="lazy"
+            decoding="async"
+            className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.05]"
           />
         ) : (
-          <span className="font-display text-xl font-semibold">
+          <span className="grid h-full place-items-center font-display text-5xl font-medium tracking-[-0.05em] text-muted">
             {project.title.slice(0, 2)}
           </span>
         )}
       </div>
-      <div className="p-5">
-        <span className="mono-label tracking-[0.06em] text-mint">
-          {project.tag}
-        </span>
-        <h3 className="mt-1.5 mb-2 text-[1.15rem] font-semibold text-ink">
-          {project.title}
-        </h3>
-        <p className="mb-4 text-[0.82rem] text-muted">{project.desc}</p>
+      <div className="mt-5 flex items-baseline justify-between gap-4">
+        <h3 className="text-[1.35rem] font-medium">{project.title}</h3>
+        <span className="mono-label shrink-0 text-muted">{project.tag}</span>
+      </div>
+      <div className="mt-3">
         {project.link ? (
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1.5 text-[0.82rem] font-semibold text-mint"
-          >
-            Visit site <IconArrow width="14" />
-          </a>
+          <ArrowLink href={project.link}>Visit site</ArrowLink>
         ) : (
-          <Link
-            to="/contact"
-            className="inline-flex items-center gap-1.5 text-[0.82rem] font-semibold text-mint"
-          >
-            Discuss a similar build <IconArrow width="14" />
-          </Link>
+          <ArrowLink to="/contact">Build something similar</ArrowLink>
         )}
       </div>
     </Reveal>
