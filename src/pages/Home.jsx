@@ -71,7 +71,7 @@ function Hero() {
           Booking new projects
         </m.span>
 
-        <h1 className="max-w-[1100px] text-[clamp(2.9rem,9.6vw,9rem)] font-medium">
+        <h1 className="max-w-[1100px] text-[clamp(2.4rem,9.6vw,9rem)] font-medium">
           {["We design and build", "digital"].map((line, i) => (
             <span key={line} className="block overflow-hidden pb-[0.08em]">
               <m.span
