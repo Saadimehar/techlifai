@@ -118,6 +118,23 @@ export function Reveal({ children, className = "", delay = 0, as = "div" }) {
   );
 }
 
+export function ImageReveal({ children, className = "" }) {
+  const reduce = useReducedMotion();
+  return (
+    <m.div
+      className={`overflow-hidden ${className}`}
+      initial={reduce ? false : { clipPath: "inset(12% 0% 0% 0% round 1rem)", opacity: 0 }}
+      whileInView={
+        reduce ? undefined : { clipPath: "inset(0% 0% 0% 0% round 1rem)", opacity: 1 }
+      }
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+    >
+      {children}
+    </m.div>
+  );
+}
+
 export function Section({
   eyebrow,
   title,
@@ -167,7 +184,7 @@ export function PageHeader({ eyebrow, title, intro }) {
   return (
     <div className="border-b border-line pt-36 pb-14 md:pt-48 md:pb-20">
       <div className="container-site">
-        <Reveal>
+        <Reveal delay={0.8}>
           <span className="eyebrow">{eyebrow}</span>
           <h1 className="max-w-[1000px] text-[clamp(2.6rem,8vw,6.5rem)] font-medium text-ink">
             {title}

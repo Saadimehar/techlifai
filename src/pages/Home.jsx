@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AnimatePresence, m } from "framer-motion";
 import { SERVICES, PROJECTS } from "../data.js";
-import { ArrowLink, Button, Reveal, Section } from "../components/Site.jsx";
+import { ArrowLink, Button, ImageReveal, Reveal, Section } from "../components/Site.jsx";
 import { IconArrow } from "../icons.jsx";
 import { Meta } from "./pageHelpers.jsx";
 
+const HERO_DELAY = 0.85;
 const WORDS = ["websites", "apps", "AI systems", "growth"];
 const STACK = [
   "React",
@@ -64,7 +65,7 @@ function Hero() {
         <m.span
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.8, delay: HERO_DELAY - 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="mono-label mb-8 inline-flex items-center gap-2.5 rounded-full border border-line bg-paper/60 px-3.5 py-2 text-muted backdrop-blur"
         >
           <i className="pulse-dot h-1.5 w-1.5 rounded-full bg-mint" />
@@ -80,7 +81,7 @@ function Hero() {
                 animate={{ y: 0 }}
                 transition={{
                   duration: 1,
-                  delay: 0.1 + i * 0.12,
+                  delay: HERO_DELAY + i * 0.12,
                   ease: [0.16, 1, 0.3, 1],
                 }}
               >
@@ -109,7 +110,7 @@ function Hero() {
         <m.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 0.9, delay: HERO_DELAY + 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="mt-12 flex flex-col justify-between gap-8 border-t border-line pt-6 md:flex-row md:items-end"
         >
           <p className="m-0 max-w-[360px] text-[1.05rem] text-muted">
@@ -195,18 +196,18 @@ function WorkCard({ project, offset }) {
   return (
     <Reveal className={offset ? "md:mt-24" : ""}>
       <Link to="/projects" className="group block">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-soft">
+        <ImageReveal className="relative aspect-[4/3] rounded-2xl border border-line bg-soft">
           <img
             src={project.image}
             alt={project.title}
             loading="lazy"
             decoding="async"
-            className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.05]"
+            className="h-full w-full object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06]"
           />
           <span className="absolute top-4 right-4 grid h-11 w-11 scale-75 place-items-center rounded-full bg-mint text-on-accent opacity-0 transition-all duration-500 group-hover:scale-100 group-hover:opacity-100">
             <IconArrow width="18" />
           </span>
-        </div>
+        </ImageReveal>
         <div className="mt-5 flex items-baseline justify-between gap-4">
           <h3 className="text-[1.5rem] font-medium">{project.title}</h3>
           <span className="mono-label text-muted">{project.tag}</span>
