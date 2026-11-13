@@ -11,7 +11,6 @@ import {
   SOCIAL_LINKS,
 } from "../data.js";
 import {
-  IconAI,
   IconArrow,
   IconFacebook,
   IconInsta,
@@ -32,7 +31,7 @@ const SOCIAL_ITEMS = [
 ];
 
 const INPUT_CLASSES =
-  "w-full rounded-[9px] border border-line bg-white px-3.5 py-3 text-ink outline-none placeholder:text-[#a7b5c3] focus:border-mint focus:ring-3 focus:ring-mint/10";
+  "w-full rounded-lg border border-line bg-paper px-3.5 py-3 font-sans text-[0.95rem] normal-case tracking-normal text-ink outline-none placeholder:text-muted focus:border-mint focus:ring-3 focus:ring-mint/10";
 
 export default function EmailContact() {
   const [form, setForm] = useState({
@@ -76,7 +75,7 @@ export default function EmailContact() {
         },
         { publicKey: EMAILJS.PUBLIC_KEY },
       );
-      setStatus("Thanks - your message has been sent successfully.");
+      setStatus("Thanks, your message has been sent successfully.");
       setForm({
         name: "",
         email: "",
@@ -104,52 +103,40 @@ export default function EmailContact() {
         />
       </Helmet>
       <PageHeader
-        eyebrow="CONTACT"
-        title="Let’s talk about what’s next."
-        intro="Tell us what you’re working towards. We’ll reply within one business day with a useful next step."
+        eyebrow="Contact"
+        title="Let's talk."
+        intro="We reply within one business day."
       />
 
       <Section>
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:gap-16">
-          <div id="book">
-            <h2 className="mb-3 text-[clamp(2rem,4vw,3.8rem)] font-bold text-ink">
-              Book a meeting
+          <div id="book" className="scroll-mt-24">
+            <h2 className="mb-6 text-[clamp(2rem,4vw,3.4rem)] font-medium">
+              Book a call
             </h2>
-            <p className="mb-6 text-muted">
-              Pick a time for a focused 30-minute conversation.
+            <p className="mb-8 max-w-[360px] text-muted">
+              30 minutes. No pitch, just a useful conversation.
             </p>
-            <div className="rounded-2xl border border-dashed border-[#b5c6c2] bg-soft p-8">
-              <span className="grid h-[46px] w-[46px] place-items-center rounded-xl bg-[#e5faf3] text-mint">
-                <IconAI width="24" height="24" />
-              </span>
-              <h3 className="mt-6 mb-2 text-[1.15rem] font-semibold text-ink">
-                Ready to discuss your project?
-              </h3>
-              <p className="mb-5 text-muted">
-                Send us a message and our team will follow up with the right
-                next step.
-              </p>
-              <Button href={`mailto:${CONTACT_EMAIL}`}>
-                Email us instead <IconArrow width="15" />
-              </Button>
-            </div>
+            <Button href={`mailto:${CONTACT_EMAIL}`}>
+              Email us <IconArrow width="15" />
+            </Button>
 
-            <div className="mt-8 grid gap-3">
+            <div className="mt-12 grid gap-4 border-t border-line pt-8">
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
-                className="flex items-center gap-3 text-[0.9rem] text-muted transition-colors hover:text-ink"
+                className="flex items-center gap-3 text-[0.95rem] text-muted transition-colors hover:text-ink"
               >
                 <IconMail width="18" className="shrink-0 text-mint" />
                 {CONTACT_EMAIL}
               </a>
               <a
                 href={`tel:${CONTACT_PHONE}`}
-                className="flex items-center gap-3 text-[0.9rem] text-muted transition-colors hover:text-ink"
+                className="flex items-center gap-3 text-[0.95rem] text-muted transition-colors hover:text-ink"
               >
                 <IconPhone width="18" className="shrink-0 text-mint" />
                 {CONTACT_PHONE}
               </a>
-              <span className="flex items-center gap-3 text-[0.9rem] text-muted">
+              <span className="flex items-center gap-3 text-[0.95rem] text-muted">
                 <IconPin width="18" className="shrink-0 text-mint" />
                 {COMPANY_ADDRESS}
               </span>
@@ -158,14 +145,14 @@ export default function EmailContact() {
 
           <div
             id="form"
-            className="rounded-2xl border border-line bg-white p-6 shadow-card sm:p-8"
+            className="scroll-mt-24 rounded-2xl border border-line bg-soft p-6 sm:p-8"
           >
-            <h2 className="mb-6 text-[clamp(2rem,4vw,3.8rem)] font-bold text-ink">
+            <h2 className="mb-8 text-[clamp(2rem,4vw,3.4rem)] font-medium">
               Send a message
             </h2>
             <form onSubmit={submit} className="grid gap-4">
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <label className="grid gap-1.5 text-[0.8rem] font-semibold text-ink">
+                <label className="grid gap-1.5 mono-label text-muted">
                   Name
                   <input
                     required
@@ -175,7 +162,7 @@ export default function EmailContact() {
                     className={INPUT_CLASSES}
                   />
                 </label>
-                <label className="grid gap-1.5 text-[0.8rem] font-semibold text-ink">
+                <label className="grid gap-1.5 mono-label text-muted">
                   Email
                   <input
                     required
@@ -189,12 +176,12 @@ export default function EmailContact() {
               </div>
 
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-                <label className="grid gap-1.5 text-[0.8rem] font-semibold text-ink">
+                <label className="grid gap-1.5 mono-label text-muted">
                   Service
                   <div className="relative">
                     <button
                       type="button"
-                      className={`flex w-full items-center justify-between gap-3 rounded-[10px] border bg-white px-3.5 py-3 text-left text-[0.9rem] font-normal text-ink transition ${
+                      className={`flex w-full items-center justify-between gap-3 rounded-lg border bg-paper px-3.5 py-3 text-left text-[0.95rem] font-normal normal-case tracking-normal text-ink transition ${
                         serviceOpen
                           ? "border-mint ring-3 ring-mint/10"
                           : "border-line hover:border-mint hover:ring-3 hover:ring-mint/10"
@@ -213,7 +200,7 @@ export default function EmailContact() {
                     </button>
 
                     <div
-                      className={`absolute top-[calc(100%+8px)] right-0 left-0 z-20 rounded-xl border border-line bg-white p-2 shadow-dropdown transition-all duration-200 ${
+                      className={`absolute top-[calc(100%+8px)] right-0 left-0 z-20 rounded-xl border border-line bg-paper p-2 shadow-dropdown transition-all duration-200 ${
                         serviceOpen
                           ? "visible translate-y-0 opacity-100"
                           : "invisible translate-y-2 opacity-0"
@@ -224,8 +211,8 @@ export default function EmailContact() {
                           type="button"
                           className={`flex w-full rounded-lg px-3 py-2.5 text-left text-[0.86rem] font-normal transition-colors ${
                             form.service === option
-                              ? "bg-[#e5faf3] text-mint"
-                              : "bg-transparent text-ink hover:bg-[#e5faf3] hover:text-mint"
+                              ? "bg-soft text-mint"
+                              : "bg-transparent text-ink hover:bg-soft hover:text-mint"
                           }`}
                           key={option}
                           onClick={() => {
@@ -243,20 +230,20 @@ export default function EmailContact() {
                   </div>
                 </label>
 
-                <label className="grid gap-1.5 text-[0.8rem] font-semibold text-ink">
+                <label className="grid gap-1.5 mono-label text-muted">
                   Budget
                   <input
                     type="text"
                     value={form.budget}
                     onChange={update("budget")}
-                    placeholder="€ / $  e.g. 2,000 - 10,000"
+                    placeholder="$ / PKR, e.g. 2,000 - 10,000"
                     className={INPUT_CLASSES}
                   />
                 </label>
               </div>
 
               {form.service === "Other / custom service" && (
-                <label className="grid gap-1.5 text-[0.8rem] font-semibold text-ink">
+                <label className="grid gap-1.5 mono-label text-muted">
                   What service do you need?
                   <input
                     required
@@ -268,7 +255,7 @@ export default function EmailContact() {
                 </label>
               )}
 
-              <label className="grid gap-1.5 text-[0.8rem] font-semibold text-ink">
+              <label className="grid gap-1.5 mono-label text-muted">
                 Project details
                 <textarea
                   required
@@ -280,7 +267,7 @@ export default function EmailContact() {
               </label>
 
               <button
-                className="inline-flex items-center justify-center gap-2.5 rounded-full border border-transparent bg-mint px-[1.15rem] py-[0.82rem] font-semibold text-white transition duration-250 ease-out hover:-translate-y-0.5 hover:shadow-btn disabled:opacity-60"
+                className="group inline-flex items-center justify-center gap-2.5 rounded-full border border-mint bg-mint px-6 py-3.5 text-[0.92rem] font-medium text-on-accent transition-opacity hover:opacity-90 disabled:opacity-60"
                 type="submit"
                 disabled={sending}
               >
@@ -298,41 +285,21 @@ export default function EmailContact() {
         </div>
       </Section>
 
-      <Section grey>
-        <div className="grid grid-cols-1 items-center gap-6 rounded-3xl border border-line bg-linear-to-br from-white to-[#eafbf5] p-6 shadow-card md:grid-cols-[0.8fr_1.2fr] md:gap-12 md:p-10">
-          <div>
-            <span className="eyebrow">STAY CONNECTED</span>
-            <h2 className="mb-2 text-[clamp(2rem,4vw,3.8rem)] font-bold text-ink">
-              Find us online.
-            </h2>
-            <p className="mb-0 max-w-[390px] text-muted">
-              Follow Techlifai for practical ideas, new launches and digital
-              growth notes.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-            {SOCIAL_ITEMS.map(([name, SocialIcon]) => (
-              <a
-                className="flex items-center gap-3 rounded-[14px] border border-mint/18 bg-white/82 px-4 py-3.5 font-semibold text-ink transition duration-200 hover:-translate-y-1 hover:border-mint hover:shadow-[0_10px_24px_rgba(0,179,134,0.12)]"
-                key={name}
-                href={SOCIAL_LINKS[name]}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={`Follow Techlifai on ${name}`}
-              >
-                <span className="grid h-[34px] w-[34px] place-items-center rounded-[10px] bg-[#e5faf3] text-mint">
-                  <SocialIcon width="20" height="20" />
-                </span>
-                <span>{name}</span>
-                <IconArrow
-                  width="14"
-                  height="14"
-                  className="ml-auto text-mint"
-                />
-              </a>
-            ))}
-          </div>
+      <Section className="pt-0">
+        <div className="flex flex-wrap gap-3 border-t border-line pt-10">
+          {SOCIAL_ITEMS.map(([name, SocialIcon]) => (
+            <a
+              className="group flex items-center gap-2.5 rounded-full border border-line px-4 py-2.5 text-[0.9rem] text-muted transition-colors hover:border-ink hover:text-ink"
+              key={name}
+              href={SOCIAL_LINKS[name]}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`Follow Techlifai on ${name}`}
+            >
+              <SocialIcon width="16" height="16" />
+              {name}
+            </a>
+          ))}
         </div>
       </Section>
     </>

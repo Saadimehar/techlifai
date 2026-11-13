@@ -1,4 +1,4 @@
-# Techlifai — Digital Growth Studio
+# Techlifai: Digital Studio
 
 A one-page, animated agency website built with React + Vite.
 
@@ -64,28 +64,28 @@ techlifai/
 ## Editing content
 
 Almost everything text-based (services, project list, team members, testimonials, the
-contact email/phone) lives in **`src/data.js`** — edit that file first before touching any
+contact email/phone) lives in **`src/data.js`**: edit that file first before touching any
 component.
 
 Colors, fonts and spacing are defined as CSS variables at the top of **`src/index.css`**.
 
 ## About the contact form
 
-This is a static front end with no backend, so it can't silently send email on its own —
+This is a static front end with no backend, so it can't silently send email on its own -
 browsers block that for security reasons. The form currently opens a pre-filled `mailto:`
 draft addressed to `itzsaadi.99@gmail.com` in the visitor's email app.
 
 If you'd rather have it submit silently (no email client popup), connect it to a form
-service instead — two easy options:
+service instead: two easy options:
 
-- **[Formspree](https://formspree.io)** — create a free form endpoint, then change the
+- **[Formspree](https://formspree.io)**: create a free form endpoint, then change the
   `submit` function in `src/components/Contact.jsx` to `fetch()` POST to your Formspree URL.
-- **[EmailJS](https://www.emailjs.com)** — sends email directly from the browser using a
+- **[EmailJS](https://www.emailjs.com)**: sends email directly from the browser using a
   client-side SDK, no backend required.
 
 ## Notes
 
-- Navigation highlighting uses `IntersectionObserver` — no extra routing library needed,
+- Navigation highlighting uses `IntersectionObserver`: no extra routing library needed,
   since this is intentionally a smooth-scrolling one-page site.
 - The Projects section acts as an in-page project gallery with category filters
   (All / Web Dev / WordPress / Webflow / Shopify / App Dev / SEO / AI) instead of a second

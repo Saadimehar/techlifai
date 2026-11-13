@@ -1,7 +1,5 @@
-import { Link } from "react-router-dom";
 import { INDUSTRIES } from "../data.js";
-import { PageHeader, Reveal, Section } from "../components/Site.jsx";
-import { IconArrow } from "../icons.jsx";
+import { ArrowLink, PageHeader, Reveal, Section } from "../components/Site.jsx";
 import { Meta } from "./pageHelpers.jsx";
 
 export default function Industries() {
@@ -12,16 +10,12 @@ export default function Industries() {
         description="Industry-aware digital strategy, websites, commerce and automation from Techlifai."
       />
       <PageHeader
-        eyebrow="INDUSTRIES WE SERVE"
-        title="Digital work shaped around your world."
-        intro="Every industry has different customers, buying journeys and constraints. We bring the right digital approach to each one."
+        eyebrow="Industries"
+        title="Shaped around your sector."
+        intro="Different customers, different journeys."
       />
-      <Section
-        eyebrow="SECTORS & SPECIALTIES"
-        title="Experience that meets people where they are."
-        intro="Explore the industries where our team creates the most leverage."
-      >
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <Section className="!pt-0">
+        <div className="grid grid-cols-1 border-t border-line sm:grid-cols-2 lg:grid-cols-4">
           {INDUSTRIES.map((industry, index) => {
             const Icon = industry.icon;
             const slug = industry.title
@@ -32,38 +26,26 @@ export default function Industries() {
             return (
               <Reveal
                 key={industry.title}
-                className="rounded-2xl border border-line bg-white p-6 shadow-card transition duration-250 hover:-translate-y-1.5 hover:border-[#b9ddcf] hover:shadow-[0_18px_35px_rgba(11,31,58,0.12)]"
-                delay={index * 0.03}
+                delay={(index % 4) * 0.05}
+                className="group scroll-mt-24 border-b border-line p-6 transition-colors duration-500 hover:bg-soft sm:border-r sm:[&:nth-child(2n)]:border-r-0 lg:[&:nth-child(2n)]:border-r lg:[&:nth-child(4n)]:border-r-0"
               >
-                <div id={slug} className="flex items-center justify-between">
-                  <div className="grid h-[46px] w-[46px] place-items-center rounded-xl bg-[#e5faf3] text-mint">
-                    <Icon width="23" />
-                  </div>
-                  <span className="mono-label text-mint">0{index + 1}</span>
+                <div id={slug} className="flex items-center justify-between text-muted">
+                  <Icon width="22" className="transition-colors group-hover:text-mint" />
+                  <span className="mono-label">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
                 </div>
-                <h2 className="mt-5 mb-3 text-[1.35rem] font-bold text-ink">
+                <h2 className="mt-14 mb-5 text-[1.5rem] font-medium">
                   {industry.title}
                 </h2>
-                <p className="mb-0 text-[0.9rem] text-muted">
-                  Build trust, simplify decisions and create a digital
-                  experience that fits how your customers choose.
-                </p>
-                <ul className="my-4 list-none border-t border-line p-0">
+                <ul className="m-0 mb-6 list-none p-0">
                   {industry.items.map((item) => (
-                    <li
-                      key={item}
-                      className="border-b border-line py-2 text-[0.78rem] text-muted"
-                    >
+                    <li key={item} className="py-1 text-[0.9rem] text-muted">
                       {item}
                     </li>
                   ))}
                 </ul>
-                <Link
-                  to="/contact"
-                  className="flex items-center gap-1.5 text-[0.78rem] font-semibold text-mint"
-                >
-                  Talk about your industry <IconArrow width="14" />
-                </Link>
+                <ArrowLink to="/contact">Talk to us</ArrowLink>
               </Reveal>
             );
           })}

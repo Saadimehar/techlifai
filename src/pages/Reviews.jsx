@@ -1,6 +1,5 @@
 import { TESTIMONIALS } from "../data.js";
-import { Card, PageHeader, Section } from "../components/Site.jsx";
-import { IconStar } from "../icons.jsx";
+import { PageHeader, Reveal, Section } from "../components/Site.jsx";
 import { Meta } from "./pageHelpers.jsx";
 
 export default function Reviews() {
@@ -10,46 +9,23 @@ export default function Reviews() {
         title="Reviews"
         description="What clients say about working with Techlifai."
       />
-      <PageHeader
-        eyebrow="REVIEWS"
-        title="Trusted by teams who care about the details."
-        intro="The best measure of our work is what happens after launch."
-      />
-      <Section>
-        <div className="mb-8 flex items-start gap-4 rounded-2xl bg-soft p-6 sm:items-center">
-          <strong className="font-display text-[2.4rem] leading-none font-semibold text-ink sm:text-[3rem]">
-            4.9
-          </strong>
-          <div>
-            <div className="mb-1 flex gap-0.5 text-[#f6b51e]">
-              {[1, 2, 3, 4, 5].map((number) => (
-                <IconStar key={number} width="18" />
-              ))}
-            </div>
-            <span className="text-[0.8rem] text-muted">
-              Average client rating across delivered projects
-            </span>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {TESTIMONIALS.map((review) => (
-            <Card key={review.name}>
-              <div className="flex gap-0.5 text-[#f6b51e]">
-                {[1, 2, 3, 4, 5].map((number) => (
-                  <IconStar key={number} width="16" />
-                ))}
-              </div>
-              <blockquote className="my-6 font-display text-[1.1rem] leading-[1.5] text-ink">
-                “{review.quote}”
+      <PageHeader eyebrow="Reviews" title="Kind words from clients." />
+      <Section className="!pt-0">
+        <div className="grid grid-cols-1 border-t border-line md:grid-cols-2">
+          {TESTIMONIALS.map((review, i) => (
+            <Reveal
+              key={review.name}
+              delay={(i % 2) * 0.06}
+              className="flex flex-col justify-between gap-12 border-b border-line py-10 md:px-8 md:odd:border-r md:odd:pl-0 md:even:pr-0"
+            >
+              <blockquote className="m-0 text-[clamp(1.2rem,2vw,1.55rem)] leading-[1.3] tracking-[-0.02em]">
+                "{review.quote}"
               </blockquote>
-              <strong className="block font-semibold text-ink">
-                {review.name}
-              </strong>
-              <span className="block text-[0.85rem] text-muted">
-                {review.role}
-              </span>
-            </Card>
+              <div>
+                <strong className="block font-medium">{review.name}</strong>
+                <span className="mono-label text-muted">{review.role}</span>
+              </div>
+            </Reveal>
           ))}
         </div>
       </Section>

@@ -16,23 +16,21 @@ export default function Projects() {
         title="Projects"
         description="Selected digital projects delivered by Techlifai."
       />
-      <PageHeader
-        eyebrow="PROJECTS"
-        title="Proof in the work."
-        intro="Explore real client projects across web, commerce, apps, SEO and AI automation."
-      />
-      <Section>
-        <div className="mb-8 flex flex-wrap gap-2">
+      <PageHeader eyebrow="Work" title="Proof in the work." />
+      <Section className="!pt-10">
+        <div className="mb-12 flex flex-wrap gap-2" role="tablist">
           {PROJECT_CATS.filter(
             (category) =>
               !["Digital Marketing", "Video Editing"].includes(category),
           ).map((category) => (
             <button
               key={category}
-              className={`rounded-full border px-3.5 py-2 text-[0.8rem] transition-colors ${
+              role="tab"
+              aria-selected={filter === category}
+              className={`rounded-full border px-4 py-2 text-[0.85rem] transition-colors duration-300 ${
                 filter === category
-                  ? "border-ink bg-ink text-white"
-                  : "border-line bg-white text-muted hover:border-ink hover:bg-ink hover:text-white"
+                  ? "border-ink bg-ink text-paper"
+                  : "border-line text-muted hover:border-ink hover:text-ink"
               }`}
               onClick={() => setFilter(category)}
             >
@@ -40,7 +38,7 @@ export default function Projects() {
             </button>
           ))}
         </div>
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2">
           {visible.map((project) => (
             <ProjectCard key={project.title} project={project} />
           ))}
