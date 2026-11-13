@@ -18,34 +18,36 @@ export default function BlogPost() {
   return (
     <>
       <Meta title={post.title} description={post.excerpt} />
-      <article className="py-16 md:py-24">
+      <article className="pt-36 pb-20 md:pt-48 md:pb-28">
         <div className="container-site">
-          <div className="max-w-[800px]">
+          <div className="max-w-[760px]">
             <span className="eyebrow">
-              {post.category} · {post.readTime}
+              {post.category} / {post.readTime}
             </span>
-            <h1 className="mb-4 max-w-[850px] text-[clamp(2.4rem,6vw,5rem)] font-bold text-ink">
+            <h1 className="mb-8 text-[clamp(2.2rem,6vw,4.4rem)] font-medium">
               {post.title}
             </h1>
-            <p className="mb-4 text-[1.2rem] text-muted">{post.excerpt}</p>
-            <img
-              src={post.image}
-              alt={post.title}
-              className="my-8 max-h-[450px] w-full rounded-2xl object-cover"
-            />
+          </div>
+          <img
+            src={post.image}
+            alt={post.title}
+            decoding="async"
+            className="mb-12 aspect-[16/9] max-h-[520px] w-full rounded-2xl border border-line object-cover"
+          />
+          <div className="max-w-[680px]">
             {post.content.map((paragraph) => (
               <p
                 key={paragraph}
-                className="mb-5 text-[1.1rem] leading-[1.85] text-muted"
+                className="mb-6 text-[1.1rem] leading-[1.7] text-muted"
               >
                 {paragraph}
               </p>
             ))}
             <Link
               to="/blog"
-              className="mt-4 inline-flex items-center gap-1.5 text-[0.82rem] font-semibold text-mint"
+              className="mt-6 inline-flex items-center gap-1.5 text-[0.88rem] font-medium text-ink transition-colors hover:text-mint"
             >
-              ← Back to insights
+              ← All articles
             </Link>
           </div>
         </div>
